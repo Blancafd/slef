@@ -1,0 +1,86 @@
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goBack">
+    <image src="../../images/back1.png"></image>
+  </view>
+  <view class="search">
+    <input placeholder="请输入所需菜品" bindinput="getsrarchword"></input>
+    <view class="searchImg">
+      <image src="../../images/search.png"></image>
+    </view>
+  </view>
+</view>
+<view class="mealListBox">
+  <view class="mealList">
+    <view class="mealmg">
+      <image src="../../images/Photo.png"></image>
+    </view>
+    <view class="mealDetail">
+      <view class="mealname">ddd</view>
+      <view class="material">主料：aa</view>
+      <view class="material">月售 50</view>
+      <view class="price">
+        <view class="money">￥66</view>
+        <view class="calculation">
+          <view class="reduce" bindtap="reduce">
+            <image src="../../images/reduce.png"></image>
+          </view>
+          <view>0</view>
+          <view class="reduce" bindtap="add">
+            <image src="../../images/add.png"></image>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="footer">
+  <view class="shop" bindtap="showCar">
+    <image class="footer_img" src="../../images/shopcar.png" mode="aspectFill"></image>
+    <view class="footer_yuan">200</view>
+  </view>
+  <view class="footer_price">
+    <text class="footer_price_yuan">￥</text>
+    <text class="footer_price_num">50</text>
+  </view>
+  <view class="jiesuan" bindtap="comfirmOrder">去结算</view>
+</view> -->
+
+<!-- 底部 没有选择的菜品时的样式 -->
+<view class="footer">
+  <view class="shop">
+    <image class="footer_img" src="../../images/shopcar.png" mode="aspectFill"></image>
+  </view>
+  <view class="footer_price">
+    <text class="footer_none">未选购菜品</text>
+  </view>
+</view>
+
+<!-- <view class="mark"  bindtap="hideShop"></view>
+<view class="shopcar">
+  <view class="carHead">
+    <view class="cartital">已选商品</view>
+    <view class="cartital">
+      <view class="clear">
+        <image src="../../images/clear.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="carlist">
+    <view class="dishDetail">
+      <view>12</view>
+      <view>￥212</view>
+    </view>
+    <view class="calculation">
+      <view class="reduce" bindtap="reducecar" >
+        <image src="../../images/reduce.png"></image>
+      </view>
+      <view>3</view>
+      <view class="reduce" bindtap="addcar">
+        <image src="../../images/add.png"></image>
+      </view>
+    </view>
+  </view>
+
+</view> -->

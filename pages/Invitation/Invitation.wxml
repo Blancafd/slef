@@ -1,0 +1,33 @@
+<view>
+ 
+         <image  src="http://image.sportfox.cn/0260720191225212346518025.png" class="img_list">
+             <view class="index_im" catchtap="in_adex">
+             邀请进度
+         </view>
+         <view class="index_for">
+               <view class="index_fora">
+                    当前已成功邀请
+               </view>
+                <view class="index_forb">
+                   <text style="font-size:30px;font-weight:600;">{{my_for.invitation_people}}</text>人
+               </view>
+         </view>
+         <view class="index_imf">
+               <view class="index_fora">
+                    当前已获得餐券
+               </view>
+                <view class="index_forb">
+                   <text style="font-size:30px;font-weight:600;">{{my_for.invitation_voucher}}</text>张
+               </view>
+         </view>
+         <view class="xinxian">
+           餐券仅限智慧餐盒使用，最终解释权归本公司所有
+         </view>
+         <button open-type="share">
+             <image  src="../../assets/icons/aaa.png" class="index-pl">
+             <text class="index_text">继续邀请</text>
+             </image>
+        </button>
+         </image>
+ 
+</view>

@@ -1,0 +1,435 @@
+/* pages/personalcenter/personalcenter.wxss */
+.header{
+  width: 100%;
+  /* height: 420rpx; */
+  background: #FBAF02;
+  box-shadow:0px 6px 12px rgba(0,0,0,0.16);
+  border-radius:0px 0px 40rpx 40rpx;
+  overflow: hidden;
+ 
+  position: fixed;
+ top: 0;
+  left: 0;
+}
+button {
+  width: 103rpx !important;
+height: 150rpx;
+  /* font-size: 28rpx; */
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+    display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: -100rpx;
+  position: static;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+}
+.header_a{
+  width: 88%;
+  height: 50rpx;
+  background: #FDD781;
+  border-radius: 30rpx 30rpx 0 0;
+  margin: 10rpx auto 0;
+}
+.header_b{
+  width: 90%;
+  height: 380rpx;
+  background: #fff;
+  border-radius:30rpx 30rpx 0rpx 0rpx;
+  margin: -30rpx auto 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.header_ba{
+  width: 90%;
+  height: 140rpx;
+  margin: 40rpx auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header_baimg{
+   width: 140rpx;
+   height: 140rpx;
+   border-radius: 50%;
+}
+.header_baimga{
+   width: 140rpx;
+   height: 140rpx;
+   border-radius: 50%;
+   background: #F5F5F5;
+}
+.header_balist{
+  width: 230rpx;
+font-size:24px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+margin: 38rpx 0rpx 38rpx 40rpx ;
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.header_box{
+  height: 60rpx;
+  padding: 4rpx 26rpx;
+  background: #FBAF02;
+  font-size:18px;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  border-radius:32rpx;
+  line-height: 60rpx;
+  margin-top: 43rpx;
+  margin-left: 20rpx;
+
+}
+.header_boxa{
+  height: 60rpx;
+  padding: 4rpx 56rpx;
+  background: #FBAF02;
+  font-size:18px;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  border-radius:32rpx;
+  margin-top: 43rpx;
+  margin-left: 170rpx;
+}
+.header_weet{
+  width: 90%;
+  height: 130rpx;
+  /* background: red; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header_weet_a{
+  width: 50%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.header_weet_b{
+   width: 50%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.header_weet_num{
+  font-size:24px;
+  font-family:PingFang SC;
+  font-weight:800;
+  color:rgba(251,175,2,1);
+  /* padding-left: 180rpx; */
+}
+.header_weet_to{
+  padding-top: 10rpx;
+  font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+ /* padding-left: 145rpx; */
+}
+.header_weetb_num{
+ font-size:24px;
+  font-family:PingFang SC;
+  font-weight:800;
+  color:rgba(251,175,2,1);
+  /* padding-left: 180rpx; */
+}
+.header_weebt_to{
+  padding-top: 10rpx;
+ font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+ /* padding-left: 145rpx; */
+}
+.ordermy{
+  width: 90%;
+  margin: 60rpx auto 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(119,119,119,1);
+}
+.active{
+  font-size:18px;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(251,175,2,1);
+  margin-top: -5rpx;
+}
+.xian{
+  width:60rpx;
+  height:16rpx;
+  background:rgba(251,175,2,1);
+  border-radius:8px;
+  margin-top: 15rpx;
+  margin-left: 80rpx;
+}
+.activeatra{
+  margin-left:250rpx;
+}
+.activeatrb{
+  margin-left:440rpx;
+}
+.activeatrc{
+  margin-left:607rpx;
+}
+.ordemuu{
+    width: 90%;
+    margin: 40rpx auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ordemuu_box{
+  width: 320rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+  border-radius:30rpx;
+}
+.ordemuu_boxli{
+  font-size:14px;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  padding: 40rpx 0 0 40rpx;
+}
+.ordemuu_boximg{
+  width: 200rpx;
+  height: 160rpx;
+  margin: 0 auto;
+}
+.ordemuu_box_a{
+  font-size:20px;
+font-family:DIN;
+font-weight:bold;
+color:rgba(251,175,2,1);
+padding:0  0 40rpx 40rpx;
+}
+.box_ord{
+  width: 90%;
+  height:192rpx;
+ margin-left: 40rpx;
+ border-radius: 30rpx;
+}
+.nvitation{
+  width:670rpx;
+  height: 564rpx;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+.Invitation_a{
+  width: 670rpx;
+  /* height: 356rpx; */
+  box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+  border-radius:0px 0px 30rpx 30rpx;
+    margin-left: 40rpx;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.Invitation_aa{
+  font-size:20px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+padding: 40rpx 0  20rpx 0;
+text-align: center;
+
+}
+.Invitation_ab{
+  text-align: center;
+  font-size:13px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.Invitation_ac{
+  width: 60%;
+  margin:40rpx auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+}
+.Invitation_box{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.Invitation_box_img{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.Invitation_boxli{
+  font-size:10px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+padding-top: 5rpx;
+}
+.personal{
+  width: 670rpx;
+  margin: 40rpx auto;
+  border-radius:30rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+}
+.personal_a{
+    width: 90%;
+    height: 76rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 40rpx auto;
+    justify-content: space-between;
+}
+.personal_aa{
+padding-top: 17rpx;
+font-size:13px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(119,119,119,1);
+}
+.personal_aimg{
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+}
+.personal_b{
+   width: 90%;
+    height: 76rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0rpx auto ;
+    justify-content: space-between;
+}
+.personal_ba{
+  padding-top: 17rpx;
+  font-size:13px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.personal_c{
+ width: 90%;
+    height: 76rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 40rpx auto ;
+    justify-content: space-between;
+}
+.img_per{
+  width: 670rpx;
+  height: 192rpx;
+ margin-left: 40rpx;
+  border-radius: 30rpx;
+}
+.img_pera{
+  width: 670rpx;
+  height: 192rpx;
+ margin: 40rpx;
+   border-radius: 30rpx;
+}
+.feedback{
+  width: 670rpx;
+  margin:40rpx auto 32rpx;
+  font-size:16px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(119,119,119,1);
+}
+.text_list{
+  width: 670rpx;
+  height: 374rpx;
+  background:rgba(255,255,255,1);
+box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+border-radius:30rpx;
+margin: 0 auto;
+  font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.feedback_img{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 0 60rpx 40rpx;
+  box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+  border-radius:30rpx;
+  text-align: center;
+  font-size: 47px;
+  color: #FBAF02;
+}
+.feet_bitt{
+  width: 670rpx;
+  height: 86rpx;
+  margin: 0 auto 78rpx;
+  background: #FBAF02;
+  font-size:18px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+border-radius:44rpx;
+text-align: center;
+line-height: 86rpx;
+}
+.bix_li{
+  width:100%;
+  height: 380rpx;
+}
+
+.img_a{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.imgurl{
+   width: 160rpx;
+  height: 160rpx;
+   margin: 0 0 60rpx 40rpx;
+     position: relative;
+
+}
+.imgurl_a{
+  width: 100%;
+  height: 100%;
+}
+.delete-btn{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: -10rpx;
+  right: -9rpx;
+  border-radius: 50%;
+}

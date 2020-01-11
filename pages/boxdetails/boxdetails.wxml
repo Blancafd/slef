@@ -1,0 +1,146 @@
+<view>
+    <view class="header">
+    
+     </view> 
+     <view class="header_a">
+     
+     </view>
+     <view class="box">
+        <view class="box_a">
+           拾味堂(江苏软件园店)
+        </view>
+        <view class="box_b">
+         研发A栋-1F
+        </view>
+        <view class="xian"></view>
+        <view class="onfor">
+             <view class="onfora">
+                当前包厢
+             </view>
+              <view class="onforb">
+               {{dataobj.room_name}}
+             </view>
+        </view>
+        <view class="xian"></view>
+        <view class="onfor">
+             <view class="onfora">
+                预约日期
+             </view>
+              <view class="onforb">
+                {{dataobj.start_date}}
+             </view>
+        </view>
+        <view class="xian"></view>
+        <view class="onfor">
+             <view class="onfora">
+                预约时段
+             </view>
+              <view class="onforb">
+              {{dataobj.start_time}}-{{dataobj.end_time}}
+             </view>
+        </view>
+        <view class="onfor_f"></view>
+         <view class="onfor" >
+             <view class="onforat">
+               预约套餐
+             </view>
+        </view>
+        <view class="xian"></view>
+        <view class="bxo_reder" wx:for="{{dataobj.meal}}" wx:key='inedx'>
+              <view class="bxo_redera">
+                  <image class="box_img" src="{{item.meal_image}}"></image>
+                  <view class="bxo_redera_a">
+                      <view class="dera_a">
+                            {{item.meal_name}}
+                      </view>
+                      <view class="dera_b">
+                       {{item.meal_introduce}}
+                      </view>
+                  </view>
+              </view>
+              <view class="bxo_rederb">
+                  <view class="bxo_rederd">
+                      <text style="font-weight:500;">￥</text>{{item.meal_price}}
+                  </view>
+              </view>
+        </view>
+         <view class="onfor_fa"></view>
+         <view class="onfor" wx:if='{{dataobj.addDish.length>0}}'>
+             <view class="onforat">
+               额外餐品
+             </view>
+        </view>
+           <view class="bxo_reder" wx:for="{{dataobj.addDish}}" wx:key='inedx'>
+              <view class="bxo_redera">
+                  <image class="box_img" src="{{item.img}}"></image>
+                  <view class="bxo_redera_a">
+                      <view class="dera_a">
+                            {{item.dish_name}}
+                      </view>
+                      <view class="dera_b">
+                        {{item.material}}
+                      </view>
+                  </view>
+              </view>
+              <view class="bxo_rederb">
+                  <view class="bxo_rederbc">
+                    <text style="font-size:8px;">X</text>{{item.dish_sum}}
+                  </view>
+                  <view class="bxo_rederdf">
+                      <text style="font-weight:500;">￥</text>{{item.price}}
+                  </view>
+              </view>
+        </view>
+        <view class="onfor_f"></view>
+        <view class="onfor">
+             <view class="onfora">
+                订单号
+             </view>
+              <view class="onforb">
+                {{dataobj.order_no}}
+             </view>
+        </view>
+        <view class="xian"></view>
+        <view class="onfor">
+             <view class="onfora">
+                下单时间
+             </view>
+              <view class="onforb">
+             {{dataobj.create_time}}
+             </view>
+        </view>
+        <view class="xian"></view>
+        <!-- <view class="onfor">
+             <view class="onfora">
+                订单备注
+             </view>
+              <view class="onforb">
+              不吃葱蒜姜，少加盐，少放...
+             </view>
+        </view> -->
+        <view class="box_for">
+        
+        </view>
+     </view>
+     <view class="bottons" wx:if="{{dataobj.order_status==1}}">
+          待支付
+     </view>
+       <view class="bottons" wx:if="{{dataobj.order_status==2}}" catchtap="addindet">
+          加菜
+     </view>
+       <view class="bottons" wx:if="{{dataobj.order_status==3}}">
+         退款中
+     </view>
+       <view class="bottons" wx:if="{{dataobj.order_status==4}}">
+          已退款 
+     </view>
+       <view class="bottons" wx:if="{{dataobj.order_status==5}}">
+          已到场
+     </view>
+       <view class="bottons" wx:if="{{dataobj.order_status==6}}">
+          已结束 
+     </view>
+      <view class="bottons" wx:if="{{dataobj.order_status==9}}">
+          已删除 
+     </view>
+</view>

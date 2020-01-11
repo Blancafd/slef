@@ -1,0 +1,25 @@
+<!-- pages/mealRemarks/mealRemarks.wxml -->
+<view class="top" style="height:{{statusBarHeight}}px"></view>
+<view class="header">
+  <image bindtap="goBack" class="header_left_img" src="/images/mingdang/left_white.png" mode="aspectFill"></image>
+</view>
+<view class="cont">
+  <block wx:for="{{remakeList}}" wx:key="{{remakeList}}">
+    <view class="{{item.clas}}" bindtap="Remark" data-value="{{item.name}}" data-index="{{index}}" checked="{{item.selected}}">{{item.name}}</view>
+  </block>
+</view>
+<!-- 确认订单的 -->
+<view class="order_cont">
+  <!-- 标题 {{detailValue}}-->
+  <view class="kong"></view>
+  <view class="kong2"></view>
+  <view class="order_title">
+      <textarea placeholder='{{detailValue}}' value="{{detailValue}}" bindinput='getValue'></textarea>
+  </view>
+  
+  <!-- 按钮 -->
+</view>
+
+<view class="anniu">
+  <view class="btn" bindtap="saveRemake">完成</view>
+</view>

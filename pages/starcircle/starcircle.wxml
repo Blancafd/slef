@@ -1,0 +1,49 @@
+<view>
+     <view class="header">
+        
+     </view>
+     <view class="box">
+           <view class="box_list">
+                 <view  class="box_lista" bindtap="mealcoupon">
+                      就餐券
+                 </view>
+                 <view  class="box_listb">
+                       <view class="box_listc" >
+                          星圆
+                       </view>
+                       <view class="box_listf">
+                       
+                       </view>
+                 </view>
+           </view>
+           <image class="box_img"  src="../../assets/icons/type.png"></image>
+           <view class="box_a">
+              {{my_for.integral}}
+           </view>
+           <view class="box_b">
+             总金额 (个)
+           </view>
+           <view class="box_c" bindtap="stardetail">
+                 <view class="box_ca">明细</view>
+                <image class="box_caimg"  src="../../assets/icons/jiana.png"></image>
+           </view>
+           <view class="box_data">
+                   <view class="box_data_a">
+                         <view class="box_data_aa">
+                              {{buttonshow.total_pay}}
+                         </view>
+                          <view class="box_data_ab">
+                             已用星圆  (个)
+                         </view>
+                   </view>
+                   <view class="box_data_a">
+                         <view class="box_data_aa">
+                              {{buttonshow.total_get}}
+                         </view>
+                          <view class="box_data_ab">
+                            获得星圆 (个)
+                         </view>
+                   </view>
+           </view>
+     </view>
+</view>

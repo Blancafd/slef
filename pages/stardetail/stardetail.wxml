@@ -1,0 +1,91 @@
+<view>
+     <view class="header">  
+          <view class="headera {{currentIndex==3?'active':''}}" bindtap='currentTab' data-id="3">全部</view>
+          <view class="headera {{currentIndex==1?'active':''}}" bindtap='currentTab' data-id="1">获得</view>
+          <view class="headera {{currentIndex==2?'active':''}}" bindtap='currentTab' data-id="2">已用</view>
+    </view>
+    
+    
+     
+     <view class="yerder">
+          <picker mode="date" value="{{date}}" start="2010-12-1" end="2023-09-01" bindchange="bindDateChange">  
+              <view class="yerder_bxo">
+                        <view class="yerder_bxoli">
+                                <view class="picker">
+                                         <text wx:if="{{iassho}}">本</text> {{bieomter}}月
+                                </view>
+                          </view>
+                    <image class="yerder_bxoimg" src="../../assets/icons/huabna.png"></image>
+                </view>
+          </picker>  
+           <view class="yerder_data">
+                 <view>
+                 获得  200个
+                 </view>
+                 <view>
+                 已用  2000个
+                 </view>
+           </view>
+     </view>
+     <!-- 全部 -->
+     <view class="weetmo" wx:if="{{currentIndex==3}}">
+          <view class="weetmo_a" wx:for="{{listdata}}" wx:key="index">
+               <view class="weetmo_ab">
+                    <image class="weetmo_abimg" src="../../assets/icons/riqi.png"></image>
+                    <view class="weetmo_ablist">
+                         <view class="weetmo_ablista">
+                             {{item.remark}}
+                         </view>
+                         <view class="weetmo_ablistb">
+                            {{item.create_time}}
+                         </view>
+                    </view>
+               </view>
+                <view class="weetmo_b" wx:if="{{item.from_mid==1}}">
+                  +{{item.amount}}
+               </view>
+                <view class="weetmo_asf" wx:if="{{item.to_mid==1}}">
+                  -{{item.amount}}
+               </view>
+         </view>
+     </view>
+    <!-- 获得 -->
+    <view class="weetmo" wx:if="{{currentIndex==1}}" >
+          <view class="weetmo_a" wx:for="{{listdata}}" wx:key="index">
+               <view class="weetmo_ab">
+                    <image class="weetmo_abimg" src="../../assets/icons/riqi.png"></image>
+                    <view class="weetmo_ablist">
+                         <view class="weetmo_ablista">
+                            {{item.remark}}
+                         </view>
+                         <view class="weetmo_ablistb">
+                             {{item.create_time}}
+                         </view>
+                    </view>
+               </view>
+               <view class="weetmo_b" >
+                  +{{item.amount}}
+               </view>
+              
+         </view>
+     </view>
+     <!-- 已用 -->
+     <view class="weetmo" wx:if="{{currentIndex==2}}">
+          <view class="weetmo_a" wx:for="{{listdata}}" wx:key="index">
+               <view class="weetmo_ab">
+                    <image class="weetmo_abimg" src="../../assets/icons/riqi.png"></image>
+                    <view class="weetmo_ablist">
+                         <view class="weetmo_ablista">
+                              {{item.remark}}
+                         </view>
+                         <view class="weetmo_ablistb">
+                            {{item.create_time}}
+                         </view>
+                    </view>
+               </view>
+               <view class="weetmo_asf">
+                  -{{item.amount}}
+               </view>
+         </view>
+     </view>
+</view>

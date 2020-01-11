@@ -1,0 +1,22 @@
+<view wx:if="{{my_for.length>0}}">
+    <view class="header" wx:for="{{my_for}}" wx:key="index">
+         <view class="index_a">
+            {{item.add_time}}
+         </view>
+         <view class="index_b">
+            {{item.content}}
+         </view>
+          <!-- <view class="index_c">
+          
+              {{item.content}}
+         </view> -->
+    </view>
+</view>
+<view wx:else>
+       <view  class="index_for">
+            <image src="http://image.sportfox.cn/49ce82019122611160981864454545.png"></image>
+       </view>
+       <view class="index_tt">
+         你还没有消息哦！
+       </view>
+</view>

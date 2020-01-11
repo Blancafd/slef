@@ -1,0 +1,134 @@
+<view class="star_area">
+  <view class="bgk1">
+    <view class="custom flex_center navbar" style="height:{{statusBarHeight}}px;">
+      <view class="headbox" style="margin-top:{{statusBarHeight}}px;">
+        <view bindtap="back" style="width:100rpx;position:absolute;top:5rpx;left:0rpx;height:80rpx">
+          <view class="back">
+            <image src="../../assets/icons/backs.png" style="width:100%;height:100%;"/>
+          </view>
+        </view>
+        <view class="wz">星圆专区</view>
+      </view>
+
+
+    </view>
+    <view class='empty_custom' style="padding-top:{{statusBarHeight}}px"></view>
+    <view class="minestar">我的星圆</view>
+
+    <view class="number">
+      <text style="color:#EF8536;font-size:80rpx;font-weight:bold">{{my_for.integral}}</text>
+      <text class="Unit">枚</text>
+    </view>
+
+    <view class="spendbox">
+      <view class="spend">
+        <view class="howpay">如何获得星圆:</view>
+        <view class="cash">买就送</view>
+        <view class="cash">签到送</view>
+      </view>
+      <view class="details" bindtap="stardetail">明细</view>
+    </view>
+
+
+
+
+
+  </view>
+
+
+  <view class="date">
+    <view class="sign">
+      <view class="getsign">
+        <view class="get">签到领星圆</view>
+        <view class="help" bindtap="help">
+          <image src="../../assets/icons/help.png" style="width:100%;height:100%;"/>
+        </view>
+      </view>
+
+      <view class="continuity">已连续签到
+        <text style="color:#FF8640">{{check_days}}</text>天</view>
+    </view>
+    <view class="sbox">
+      <block wx:for="{{checks}}" wx:key='index'>
+        <view class="datebox">
+          <view class="daybox">
+            <!-- <view class="mask" wx:if="{{item.is_sign==2}}"></view> -->
+            <view class="newstatus" wx:if="{{item.is_sign==1}}">
+              <image src="../../assets/icons/status.png"style="width:100%;height:100%;" />
+            </view>
+            <view class="{{item.is_sign==2?'mask':'signdate'}}" wx:if="{{item.is_sign!=1}}">
+              <text wx:if="{{item.point!='未签'}}">+</text>{{item.point}}
+
+
+            </view>
+            <view class="line" wx:if="{{index<6}}"></view>
+          </view>
+
+          <view class="day">{{item.date}}</view>
+        </view>
+      </block>
+
+
+    </view>
+    <view class="st" wx:if="{{buttonshow}}" bindtap="signin">点击签到</view>
+  </view>
+
+
+
+
+  <!--今日劲爆结束-->
+  <view class="brandtitle">
+    <view class="titleimg">
+      <image src="../../assets/icons/shop.png" style="width:100%;height:100%;"/>
+    </view>
+    <view class="brand_w">购物送星圆</view>
+    <view class="titleimg">
+      <image src="../../assets/icons/shop.png" style="width:100%;height:100%;"/>
+    </view>
+  </view>
+  <!--签到成功自定义弹框wx:if="{{boxshow}}"-->
+  <view class="succesbox" wx:if="{{boxshow}}">
+    <view class="show">
+      <image src="../../assets/icons/show.png" style="width:100%;height:100%;"/>
+    </view>
+    <view class="succ">签到成功</view>
+
+    <view class="succ getstar">星圆+{{point}}</view>
+
+  </view>
+
+ 
+
+  <view class="top" wx:if="{{topshow}}" bindtap="goTop">
+    <image src="../../assets/icons/top.png" />
+  </view>
+
+  <!--自定义弹框-->
+  <view class="bigshow" wx:if="{{isshow}}">
+    <view class="showbox"></view>
+
+    <view class="showtoast">
+      <view class="signbox">
+        <view class="signw">— 签到规则 —</view>
+        <view class="rule">
+          <view class="No">1.</view>
+          <view>每天签到都可获得星圆奖励， 连续签到10天奖励星圆增加 </view>
+        </view>
+        <view class="rule">
+          <view class="No">2.</view>
+          <view>若签到中断，需从头再来</view>
+        </view>
+        <view class="rule">
+          <view class="No">3.</view>
+          <view>星圆抵现功能即将上线，敬请 期待！</view>
+        </view>
+        <view class="know" bindtap="close">知道啦</view>
+        <view class="close" bindtap="close">
+          <image src="../../assets/icons/shuts.png" style="width:100%;height:100%;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

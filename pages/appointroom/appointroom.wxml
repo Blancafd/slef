@@ -1,0 +1,40 @@
+
+<view class="header" style="margin-top:{{statusBarHeight}}px">
+    <view class="title">预约包厢</view>
+    <view class="news" bindtap="messagecenter">
+        <image class="news_img" src="/images/mingdang/xiaoxi.png" mode="aspectFill"></image>
+        <view class="news_yuan" wx:if='{{news>0}}'>{{news}}</view>
+    </view>
+</view>
+<view class='table'>
+  <view class='boxS'></view>
+  <block wx:for="{{month}}" wx:key="index">
+    <view catchtap='select' data-index='{{index}}' class="select {{current==index?'act':''}}">
+      <text wx:if="{{current==index}}">{{week[index]}}</text>
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
+<view class="tabTime">
+  <view bindtap="checkTap" data-type="1">
+    <view class="timeList">午餐 <text>(12:00-14:00)</text> </view>
+    <view class="timeLine" wx:if='{{currentTap == 1}}'></view>
+  </view>
+  <view bindtap="checkTap" data-type="2">
+    <view class="timeList">晚餐 <text>(18:00-20:00)</text> </view>
+    <view class="timeLine" wx:if='{{currentTap == 2}}'></view>
+  </view>
+</view>
+<view class="roomList" wx:for='{{roomlist}}' data-isChoose="{{item.is_choose}}" data-roomid="{{item.id}}" wx:key='index' wx:if='{{item.luncth==currentTap}}' bindtap="goDetail">
+  <view>
+    <view class="roomPic">
+      <image src='{{item.index_img}}'></image>
+    </view>
+  </view>
+  <view class="roomBottom">
+    <view>{{item.name}}</view>
+    <view>小包厢面积{{item.area}}平方米，最多可容纳{{item.capacity}}人。</view>
+  </view>
+  <view class="type" wx:if='{{item.is_choose == 1}}'>• 空闲中</view>
+  <view class="type active" wx:if='{{item.is_choose == 2}}'>• 使用中</view>
+</view>

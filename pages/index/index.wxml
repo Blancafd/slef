@@ -1,0 +1,220 @@
+<!--index.wxml-->
+<view class="head_top" style="padding-top:{{statusBarHeight}}px;height:108px;line-height:45px">
+  <view class="head">
+    <view class="head_img" bindtap="messagecenter">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="dots" wx:if='{{news>0}}'>{{news}}</view>
+    <view class="status" wx:if='{{is_line==1}}'>营业中</view>
+    <view class="status active" wx:if='{{is_line==2}}'>休息中</view>
+    <!-- <view class="nowPreson">当前就餐人数：
+      <text>300</text> </view> -->
+  </view>
+  <view class="head_logo">
+    <view class="logo_one">
+      <image src="../../images/logo.png"></image>
+    </view>
+    <view class="logo_right">
+      <view class="logo_two">
+        <image src="../../images/hui2.png"></image>
+      </view>
+      <view class="logo_two">
+        <image src="../../images/xin.png"></image>
+      </view>
+      <view class="logo_two">
+        <image src="../../images/xian.png"></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="second">
+  <view>
+    <view class="logo_list">
+      <image src="../../images/sao.png"></image>
+    </view>
+    <view class="logo_text">扫一扫</view>
+  </view>
+  <view>
+    <view class="logo_list">
+      <image src="../../images/hui.png"></image>
+    </view>
+    <view class="logo_text">二维码</view>
+  </view>
+  <view>
+    <view class="logo_list">
+      <image src="../../images/yu.png"></image>
+    </view>
+    <view class="logo_text">余额</view>
+  </view>
+  <view>
+    <view class="logo_list">
+      <image src="../../images/xing.png"></image>
+    </view>
+    <view class="logo_text">星圆</view>
+  </view>
+</view>
+<view class="guestName">
+  Hi
+  <text>{{userInfo.nickName}}</text>
+</view>
+<view class="openTime">
+  <view>
+    <view class="timeDetail">
+      <view style="width:20rpx;height:20rpx;margin-right:8rpx">
+        <image style="height:100%;width:100%" src="../../images/kai.png"></image>
+      </view>
+      <view class="open_text"> 营业时间</view>
+    </view>
+    <view class="time">
+      午间 {{indexData.am_time}}
+    </view>
+    <view class="time">
+      晚间 {{indexData.pm_time}}
+    </view>
+  </view>
+  <view class="adress" bindtap="goStorelist">
+    {{name}}
+    <text>></text>
+  </view>
+</view>
+<view>
+  <view class="swiper_box">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#FBAF02">
+      <block wx:for="{{indexData.img}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <view class="dots">
+      <block wx:for="{{background}}" wx:key="unique">
+        <view class='dot {{swiperCurrent == index ? "active" : ""}}'></view>
+      </block>
+    </view> -->
+  </view>
+</view>
+<view class="modular">
+  <view class="modular_left" bindtap="goSmartbox">
+    <image src="../../images/smart_box.png"></image>
+  </view>
+  <view class="modular-right">
+    <view bindtap="goMenu">
+      <image src="../../images/menu.png"></image>
+    </view>
+    <view bindtap="goroomlist">
+      <image src="../../images/themeroom.png"></image>
+    </view>
+  </view>
+</view>
+<!-- 精选明档 -->
+<view class="selectmenu">
+  <view class="title">
+    <view class="text">
+      精选明档菜品
+    </view>
+    <view class="more" bindtap="goMenu"> 更多 > </view>
+  </view>
+  <view class="menuList">
+    <view class="menuKind" wx:for='{{dishlist}}' wx:key='index' bindtap="gochooseFoods">
+      <view>
+        <view class="menuName">
+          <view>{{item.dish_name}}</view>
+          <view>{{item.material}}</view>
+        </view>
+        <view class="mainFood">
+          <image src="{{item.dish_img}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 预约包厢 -->
+<view class="selectmenu {{listarrLength?'marbotm':''}}">
+  <view class="title">
+    <view class="text">
+      预约包厢
+    </view>
+    <view class="more" bindtap="goroomlist"> 更多 > </view>
+  </view>
+  <view class='table'>
+    <view class='boxS'></view>
+    <block wx:for="{{month}}" wx:key="index">
+      <view catchtap='select' data-index='{{index}}' class="select {{current==index?'act':''}}">
+        <text wx:if="{{current==index}}">{{week[index]}}</text>
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='tableTap'>
+    <view>
+      <view class="selectStyle" bindtap="checkTime" data-type="1">
+        <view class="selectDot" wx:if='{{currentTab == 1}}'></view>
+      </view>
+      <view class="Tabtime">午餐(12:00-14:00)</view>
+    </view>
+    <view>
+      <view class="selectStyle" bindtap="checkTime" data-type="2">
+        <view class="selectDot" wx:if='{{currentTab == 2}}'></view>
+      </view>
+      <view class="Tabtime">晚餐(18:00-20:00)</view>
+    </view>
+  </view>
+  <view class="menuList">
+
+    <view class="roomKind" wx:for='{{roomlist}}' wx:key='index' wx:if='{{item.luncth == currentTab}}'>
+      <view class="img">
+        <image src="{{item.index_img}}"></image>
+      </view>
+      <view class="textDetail">
+        <view wx:if='{{item.is_choose == 1}}'>• 空闲中</view>
+        <view class="active" wx:if='{{item.is_choose == 2}}'>• 使用中</view>
+        <view>
+          <view>包厢名：{{item.name}}</view>
+          <view>可容纳：{{item.capacity}}人</view>
+        </view>
+      </view>
+      <view class="btn" bindtap="goroomDetail" data-roomid="{{item.id}}" data-ischoose="{{item.is_choose}}" wx:if='{{item.is_choose == 1}}'>
+        我要预约
+      </view>
+
+    </view>
+  </view>
+  <view class="menuList" wx:if='{{roomlist.length==0}}'>
+    <view class="nolist">
+      <image src="http://image.sportfox.cn/99ed1201912260949332952bgimg.png"></image>
+      <view class="tishi">
+        <view>今日
+          <text wx:if='{{currentTab==1}}'>午餐</text>
+          <text wx:if='{{currentTab==2}}'>晚餐</text>预约已满</view>
+        <view>请更换预约时间！</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer_tip" wx:if="{{listarr.order_status ==5}}">
+  <view class="footer_content">
+    <view class="footer_content_left">
+      <view class="footer_left_lin1">精心烹制中</view>
+      <view class="footer_left_lin2">主厨正在烹制您的餐品，预计
+        <text class="footer_left_time">12:30</text> 可烹制完成。
+
+      </view>
+    </view>
+    <view class="footer_content_right">
+      <view class="footer_right_btn" bindtap="gomealCooking">查看</view>
+    </view>
+    <view class="clear"></view>
+  </view>
+</view>
+<view class="footer_tip" wx:if="{{listarr.order_status ==8}}">
+  <view class="footer_content">
+    <view class="footer_content_left">
+      <view class="footer_left_lin1">等待取餐</view>
+    </view>
+    <view class="footer_content_right">
+      <view class="footer_right_btn" bindtap="gomealCooking">查看</view>
+    </view>
+    <view class="clear"></view>
+  </view>
+</view>

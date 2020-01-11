@@ -1,0 +1,17 @@
+<view>
+     <view class="header">
+      餐券大放送，充值立享<text class="head">买10送10</text>，获得无上限哦！
+     </view>
+     <view class="box" wx:for="{{coupon}}" wx:key='index' >
+          <view class="box_a"> <text style="font-size:14px;font-weight:500;">￥</text>{{item.price}}</view>
+          <view  class="box_b">
+                  <view  class="box_list">{{item.name}}</view>
+                  <view class="box_lista" bindtap="monter" data-item="{{item}}">
+                        <text class="box_listab">前往充值</text>
+                        <image class="box_img" src="../../assets/icons/jiantou.png"></image>
+                  <!-- 前往充值 -->
+                  </view>
+          </view>
+     </view>
+     
+</view>

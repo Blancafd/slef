@@ -1,0 +1,11 @@
+{
+ "navigationBarTextStyle": "black",
+"navigationBarTitleText": "包厢预约",
+"navigationBarBackgroundColor": "#fff",
+"backgroundColor": "#eeeeee",
+"backgroundTextStyle": "light",
+"enablePullDownRefresh": false,
+"usingComponents": {
+  "popup": "../../component/popup/popup"
+}
+}

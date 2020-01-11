@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {},
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "选择就餐劵",
+    "navigationBarBackgroundColor": "#FBAF02",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+}

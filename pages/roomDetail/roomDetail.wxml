@@ -1,0 +1,68 @@
+    
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="detailbg">
+  <image src="{{roomDetail.main_img[0]}}"></image>
+</view>
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goback">
+    <image src="../../images/backWhite.png"></image>
+  </view>
+  <view class="search">
+    包间详情
+  </view>
+</view>
+<view class="detaillist">
+  <view>
+  <view>{{roomDetail.name}}</view>
+  <view class="discript">{{roomDetail.remark}}</view>
+  <view class="list">
+    <view>当前包厢</view>
+    <view>{{roomDetail.name}}</view>
+  </view>
+  <view class="list">
+    <view>预约日期</view>
+    <view>{{format.way(roomDetail.start_date)}}</view>
+  </view>
+  <view class="list">
+    <view>预约时段</view>
+    <view wx:if='{{roomDetail.luncth == 1}}'>午餐({{roomDetail.start_time}}-{{roomDetail.end_time}})</view>
+    <view wx:if='{{roomDetail.luncth == 2}}'>晚餐({{roomDetail.start_time}}-{{roomDetail.end_time}})</view>
+  </view>
+
+  </view>
+  <view class="checkMeal" >
+    <view class="tishi">选择套餐
+      <text>(若套餐内餐品不足，可在付款成功后进行加餐)</text> </view>
+    <view>
+     
+      <view class="type" wx:for='{{roomDetail.meal}}' wx:key='index' data-price="{{item.meal_price}}" data-index="{{item.id}}" bindtap="checkMeal">
+        <view>
+          <view class="selectStyle">
+            <view class="selectDot"  wx:if='{{item.id == mealKind}}'></view>
+          </view>
+          <view>
+            <view>
+              {{item.meal_name}}
+            </view>
+            <view class="person">{{item.meal_introduce}}</view>
+          </view>
+        </view>
+        <view class="enter">
+          <view>￥{{item.meal_price}}</view>
+          <view class="right" data-mealid="{{item.id}}" catchtap="goMealdetail"> <image src="../../images/right.png"></image>  </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <view class="money">
+    <text>￥{{mealPrice}}</text>
+  </view>
+  <view wx:if='{{is_choose == 1}}' bindtap="comfirmOrder">
+    去付款
+  </view>
+ <view wx:if='{{is_choose == 2}}'>
+   使用中...
+  </view>
+</view>

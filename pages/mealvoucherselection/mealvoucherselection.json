@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "餐券选择",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

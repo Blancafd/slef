@@ -1,0 +1,85 @@
+/* pages/mealvoucherselection/mealvoucherselection.wxss */
+.header{
+  width: 90%;
+ background: #FFF7E5;
+ border-radius:16rpx;
+ margin: 40rpx auto 60rpx;
+ font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(68,68,68,1);
+padding: 20rpx 0;
+text-align: center;
+
+}
+.head{
+  font-size: 14px;
+  color: #FBAF02;
+  font-weight: bold;
+}
+.box{
+ width: 90%;
+ height: 186rpx;
+ /* background: red; */
+ margin: 0 auto 40rpx; 
+ border-radius:30rpx;
+ display:flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ justify-content: space-between;
+ box-shadow:0px 6px 12px rgba(0,0,0,0.16);
+}
+.box_a{
+  width: 186rpx;
+  height: 186rpx;
+  background: #FBAF02;
+   border-radius:30rpx 0 0 30rpx;
+   text-align: center;
+   line-height: 186rpx;
+   font-size:32px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,255,255,1);
+}
+.box_b{
+  width: 440rpx;
+  height: 186rpx;
+   border-radius: 0 30rpx 30rpx 0 ;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+.box_list{
+  width: 100%;
+  font-size:18px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+ padding: 30rpx 20rpx 30rpx 0;
+}
+.box_lista{
+  width: 220rpx;
+  height: 50rpx;
+  margin-left: 180rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.box_listab{
+font-size:16px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(251,175,2,1);
+}
+.box_img{
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 10rpx ;
+  margin-left: 30rpx;
+  background: #FBAF02;
+  border-radius:50% 
+}

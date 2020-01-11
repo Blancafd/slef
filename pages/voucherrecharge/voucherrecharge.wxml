@@ -1,0 +1,61 @@
+<view>
+     <view class="header">
+      餐券大放送，充值立享<text class="head">买10送10</text>，获得无上限哦！
+     </view>
+     <view class="box">
+          <view class="box_a"> 
+          <view  class="box_for">
+           <text style="font-size:14px;font-weight:500;">￥</text>{{fontter.price}}
+          </view>
+         
+           <view class="box_fora">10张</view>
+          </view>
+          <view  class="box_b">
+                  <view  class="box_list">{{fontter.name}}</view>
+                  <view class="box_lista">
+                       有效期至{{fontter.end_time}}
+                  </view>
+          </view>
+     </view>
+     <view class="weet">
+          <view class="weeta"></view>
+          <view class="weetb">活动赠送</view>
+     </view>
+        <view class="box">
+            <view class="box_a"> 
+              <view  class="box_for">
+              <text style="font-size:14px;font-weight:500;">￥</text>{{fontter.price}}
+              </view>
+              <view class="box_fora">送10张</view>
+            </view>
+            <view  class="box_b">
+                    <view  class="box_list">{{fontter.name}}</view>
+                    <view class="box_lista">
+                        有效期至{{fontter.end_time}}
+                    </view>
+            </view>
+        </view>
+       <view class="box">
+              <view class="box_a"> 
+                    <view  class="box_fored">
+                         100
+                    </view>
+                  
+              </view>
+              <view  class="box_b">
+                      <view  class="box_listf">赠100星圆</view>
+                      <!-- <view class="box_lista">
+                          有效期至2020.12.11
+                      </view> -->
+              </view>
+       </view >
+      
+       <view class="bottonst">
+           <view class="bottonst_a">
+           实际应付 ¥<text style="font-size:20px;font-weight: bold;">{{pricedata}}</text>
+           </view>
+           <view class="bottonst_b" bindtap="settlement">
+                去结算
+           </view>
+       </view>
+</view>

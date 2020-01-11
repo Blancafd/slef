@@ -1,0 +1,367 @@
+/* pages/dinnerplate/dinnerplate.wxss */
+.changefot{
+  width: 100%;
+  height: 280rpx;
+  background: #FBAF02;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* align-items: center; */
+  font-size:16px;
+font-family:PingFang SC;
+font-weight:bold;
+  color: #fff;
+}
+.changefot_a{
+  width: 50%;
+  /* height: 130rpx; */
+  text-align: center;
+  padding-top: 50rpx;
+}
+.img_list{
+  width: 44rpx;
+  height: 26rpx;
+
+  position: absolute;
+  top: -8rpx;
+  left: 145rpx;
+}
+.active{
+  color: #000;
+}
+.index_box{
+  width:95%;
+  height: 50rpx;
+  background: #FDD781;
+  margin: 0 auto;
+  border-radius:40rpx; 
+  margin-top: -160rpx;
+  position: relative;
+  z-index: 0;
+}
+.box_list{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: -32rpx;
+   position: relative;
+   border-radius: 40rpx 40rpx 0 0; 
+}
+.box_list_a{
+  width: 670rpx;
+  background: #fff;
+  margin: 100rpx auto 0;
+ border-radius: 40rpx ; 
+ box-shadow:1px 1px 5px rgba(0,0,0,0.12);
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+}
+.box_list_if{
+    width: 670rpx;
+  background: #fff;
+  margin: 200rpx auto 0;
+ border-radius: 40rpx ; 
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+}
+.in_for{
+  width: 100%;
+  height: 450rpx;
+}
+.activeatra{
+  left: 530rpx;
+}
+.in_fora{
+  text-align: center;
+  /* font-size:18px; */
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.box_for{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0rpx auto;
+}
+.box_for_img{
+  width: 320rpx;
+  height: 240rpx;
+  margin-top: -40rpx;
+}
+.box_for_list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 20rpx 40rpx;
+}
+.box_for_list_a{
+font-size:16px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+
+}
+.box_for_list_b{
+  padding:7rpx 20rpx;
+  background: #2CC2DC;
+  font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+border-radius:40rpx; 
+text-align: center;
+margin: 10rpx 0;
+}
+.box_for_list_ba{
+   padding:7rpx 20rpx;
+  background: #FF7A7A;
+  font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+border-radius:40rpx; 
+text-align: center;
+margin: 10rpx 0;
+}
+.box_for_list_c{
+  font-size:18px;
+font-family:PingFang SC;
+font-weight:800;
+color:rgba(252,81,86,1);
+margin-top: 10rpx;
+}
+
+.weet_list{
+    width: 33%;
+    /* height: 120rpx; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-right:2rpx solid #F1F1F1; 
+}
+.weet_lista{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.weet_lista_img{
+  width: 34rpx;
+  height: 34rpx;
+  
+}
+.weet_lista_a{
+  font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+padding-left: 16rpx;
+}
+.weet_listb{
+  font-size:18px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+padding-left: 50rpx;
+padding-top: 30rpx;
+}
+.conter{
+  text-align: center;
+  padding-left: 35rpx;
+}
+.box_list_c{
+  width: 45%;
+  height: 64rpx;
+  margin:0rpx auto 40rpx;
+font-size:16px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+text-align: center;
+background: #FBAF02;
+border-radius: 32rpx;
+line-height: 64rpx;
+}
+.mentcode_a{
+  width: 440rpx;
+  height: 440rpx;
+  margin: 140rpx auto 82rpx;
+}
+.index_a{
+  text-align: center;
+  font-size:18px;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.index_afor{
+  width: 670rpx;
+  height: 192rpx;
+  margin: 82rpx auto 0;
+}
+.box_list_b{
+  width: 100%;
+  height: 700rpx;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: inline-block;
+}
+.box_list_f{
+   width: 100%;
+  height: 700rpx;
+  flex-direction: column;
+  flex-wrap: wrap;
+   display: inline-block;
+}
+.fonr_box{
+  width: 170rpx;
+  height: 64rpx;
+ margin: 0 auto;
+}
+.scroll_a{
+   width: 90%;
+    margin: 30rpx auto 40rpx;
+}
+.meader{
+  width:100%;
+  height: 80rpx;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.meader_a{
+  width: 34rpx;
+  height:34rpx;
+
+  margin-top: 7rpx;
+  margin-left: 40rpx;
+  float: left;
+}
+.meader_b{
+float: left;
+margin-left: 20rpx;
+font-size:10px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+} 
+ .meader_c{
+  width:96rpx;
+height:42rpx;
+border-radius:22rpx;
+float: right;
+font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+opacity:1;
+text-align: center;
+line-height: 42rpx;
+}
+.meader_d{
+    width:96rpx;
+height:42rpx;
+
+border-radius:22rpx;
+float: right;
+font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+opacity:1;
+text-align: center;
+line-height: 42rpx;
+margin-right: 40rpx;
+}
+.activea{
+   background:#FEDDDE;
+color:rgba(252,87,91,1);
+}
+.currentin{
+  width: 100%;
+  height: 120rpx;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 120rpx;
+font-size:20px;
+font-family:PingFang SC;
+font-weight:Bold;
+color:#333;
+}
+
+.finter{
+  width:100%;
+ height: 80rpx;
+   float: left;
+}
+.boforin{
+   width:100%;
+   height:300rpx;
+   margin: 0 auto;
+   float: left;
+}
+.infer_ar{
+  width:30%;
+  height:250rpx;
+  float: left;
+  margin-right: 5%;
+}
+.infer_ara{
+  width:30%;
+  height:250rpx;
+  float: right;
+  
+}
+.infer_ar_img{
+  width: 100%;
+  height: 170rpx;
+  float: left;
+  position: relative;
+}
+.infer_arfor{
+    width: 100%;
+  height: 80rpx;
+  float: left;
+text-align: center;
+font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.inter_a{
+  margin-top: 30rpx;
+  width: 585rpx;
+  float: left;
+font-size:10px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+
+}
+.infor_der{
+  width: 100%;
+  height: 400rpx;
+  float: left;
+}
+.inded_text{
+position: absolute;
+ left: 50%; 
+ top: 50%;   
+    transform: translate(-50%, -50%); 
+font-size:15px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+
+}

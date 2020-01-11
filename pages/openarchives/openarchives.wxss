@@ -1,0 +1,317 @@
+.headeraf{
+  width: 90%;
+  height: 64rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size:14px;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+border-radius:32rpx;
+position: fixed;
+background: #fff;
+left: 50%;
+ transform: translate(-50%, 0%);
+}
+.index_ottt{
+  width: 90%;
+  display: flex;
+  justify-content:flex-end; 
+font-size:20px;
+font-family:PingFang SC;
+font-weight:800;
+color:rgba(251,175,2,1);
+}
+.herrder{
+    width: 90%;
+  height: 64rpx;
+  margin: 0 auto;
+}
+.headera{
+  width: 25%;
+  height: 64rpx;
+  /* background: black; */
+  border-radius:32rpx;
+  text-align: center;
+  line-height: 64rpx;
+}
+.active{
+ color:rgba(255,255,255,1);
+ background:rgba(251,175,2,1);
+}
+.box{
+width: 90%;
+margin: 40rpx auto 0;
+background:rgba(255,255,255,1);
+box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+border-radius:30rpx;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+.for_der{
+  width: 90%;
+ margin: 30rpx auto 0;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ justify-content: space-between;
+}
+.for_dera{
+  width: 50%;
+font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);
+ overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.for_derb{
+font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(44,194,220,1);
+}
+.for_derba{
+font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:#FBAF02;
+}
+.for_derbb{
+  font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:#999999;
+}
+.infor{
+  width: 90%;
+  height: 120rpx;
+  margin: 20rpx auto 0 ;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.for_derbbc{
+  font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:#FF7A7A;
+}
+.infor_box{
+  width: 65%;
+  height: 120rpx;
+   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+   align-items: center;
+}
+.infor_img{
+  width: 120rpx;
+  height: 120rpx;
+}
+.infor_box_a{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.infor_box_ab{
+ width:270rpx;
+font-size:15px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+ overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.infor_box_ac{
+width:270rpx;
+font-size:10px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(136,136,136,1);
+ overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.infor_in{
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.infor_list{
+font-size:13px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.infor_preni{
+font-size:18px;
+font-family:PingFang SC;
+font-weight:800;
+color:rgba(51,51,51,1);
+}
+.xian{
+  width: 90%;
+  height: 2rpx;
+  background: #F9F9F9;
+  margin: 25rpx auto 0;
+}
+.disfor{
+  width: 90%;
+  margin: 30rpx auto ;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.disfor_a{
+width: 40%;
+font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+margin-top: 10rpx;
+}
+.disfont{
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+}
+.disfont_a{
+  width: 40%;
+font-size:12px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+margin-top: 10rpx;
+}
+.disfont_b{
+font-size:16px;
+font-family:PingFang SC;
+font-weight:800;
+color:rgba(51,51,51,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.bottfo{
+  width: 90%;
+  height: 62rpx;
+  margin: 0rpx auto 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.bottfo_a{
+ width:242rpx;
+height:60rpx;
+background:rgba(255,255,255,1);
+border:2rpx solid rgba(251,175,2,1);
+border-radius:30rpx;
+text-align: center;
+line-height: 60rpx;
+font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(251,175,2,1);
+}
+.bottfo_b{
+ width:242rpx;
+height:60rpx;
+background:rgba(255,255,255,1);
+border:2rpx solid rgba(251,175,2,1);
+border-radius:30rpx;
+text-align: center;
+line-height: 60rpx;
+font-size:14px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(251,175,2,1);
+margin-left: 40rpx;
+}
+.wujil{
+  width: 536rpx;
+  height: 278rpx;
+  margin: 400rpx auto 70rpx;
+}
+.text_list{
+  font-size:18px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+text-align: center;
+}
+/* //弹窗样式 */
+.container {
+  padding: 20rpx 0 120rpx 0;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 80rpx 90rpx 60rpx 90rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.sub-title {
+  font-size: 24rpx;
+  color: #7a7a7a;
+  padding-top: 18rpx;
+}
+
+.tui-btn-box {
+  padding: 10rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.tui-btn-mtop {
+  margin-top: 36rpx;
+}
+
+.tui-modal-custom {
+  text-align: center
+}
+
+.tui-tips-img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.tui-modal-custom-text{
+  font-size:30rpx;
+  color: #333;
+  padding: 20rpx 0
+}

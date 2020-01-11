@@ -1,0 +1,34 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.custom>text{
+  overflow: hidden;
+  max-width: 280rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size:32rpx;
+  font-family:PingFang-SC-Regular;
+  color:rgba(0,0,0,1);
+  line-height: 45px;
+}
+image{
+  display: inline
+}
+button{
+  position: fixed;
+  right: -60rpx;
+  bottom: 96rpx;
+  border-top-left-radius: 46rpx !important;
+  border-bottom-left-radius: 46rpx !important;
+  width: 394rpx !important;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "明档记录",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "popup": "../../component/popup/popup"
+  }
+}

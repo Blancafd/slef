@@ -1,0 +1,272 @@
+<view wx:if="{{isshop}}">
+    <!-- 头部样式 -->
+ 
+      
+      <view class="header">
+            <view class="header_a"></view>
+            <view class="header_b">
+                  <view class="header_ba">
+                        <image class="header_baimg" src="{{userInfo.avatarUrl}}"></image>
+                        <view class="header_balist">{{userInfo.nickName}}</view>
+                        <view class="header_box" bindtap="stararea" wx:if="{{my_for.sign==1}}">已签到</view>
+                        <view class="header_box" bindtap="stararea" wx:if="{{my_for.sign==2}}">签到</view>
+                  </view>
+                  <view class="header_weet">
+                          <view class="header_weet_a" bindtap="mealcoupon">
+                                    <view class="header_weet_num" >
+                                        {{my_for.count}}
+                                    </view>
+                                    <view class="header_weet_to">
+                                        就餐券
+                                    </view>
+                          </view>
+                          <view class="header_weet_b" bindtap="starcircle">
+                                    <view class="header_weetb_num">
+                                          {{my_for.integral}}
+                                    </view>
+                                    <view class="header_weebt_to">
+                                        星元
+                                    </view>
+                          </view>
+                  </view>
+            </view>
+      </view>
+      
+       
+         <!-- 遮挡物 -->
+         <view class="bix_li" >
+         
+         </view>
+          <!-- 滑动模块 -->
+          <view class="ordermy">
+                <view class=" {{currentIndex==1?'active':''}}" data-index='1' bindtap='currentTab'> 我的订单</view>
+                <view class=" {{currentIndex==2?'active':''}}" data-index='2' bindtap='currentTab'> 邀请好友</view>
+                <view class=" {{currentIndex==3?'active':''}}" data-index='3' bindtap='currentTab'> 个人资料</view>
+                <view class=" {{currentIndex==4?'active':''}}" data-index='4' bindtap='currentTab'> 帮助反馈</view>
+          </view>
+          <!-- 底部移动的样式 -->
+          <view>
+              <view class="xian" wx:if='{{currentIndex==1}}'></view>
+              <view class="xian {{currentIndex==2?'activeatra':''}}" wx:if='{{currentIndex==2}}'></view>
+              <view class="xian {{currentIndex==3?'activeatrb':''}}" wx:if='{{currentIndex==3}}'></view>
+              <view class="xian {{currentIndex==4?'activeatrc':''}}" wx:if='{{currentIndex==4}}'></view>
+          </view>
+            <!-- 订单模块 -->
+            <view wx:if='{{currentIndex==1}}'>
+                <view class="ordemuu" >
+                      <view class="ordemuu_box" catchtap="openarchives">
+                          <view class="ordemuu_boxli">明档记录</view>
+                          <image class="ordemuu_boximg" src="../../assets/icons/ming.png"></image>
+                            <view class="ordemuu_box_a">{{pecificquantity.kitchen}}</view>
+                      </view>
+                        <view class="ordemuu_box" catchtap="balcony"> 
+                          <view class="ordemuu_boxli">包厢预约</view>
+                          <image class="ordemuu_boximg" src="../../assets/icons/bao.png"></image>
+                            <view class="ordemuu_box_a">{{pecificquantity.reserve}}</view>
+                        </view>
+                        <view class="ordemuu_box" catchtap="buffettray">
+                          <view class="ordemuu_boxli">自助餐盘</view>
+                          <image class="ordemuu_boximg" src="../../assets/icons/zi.png"></image>
+                            <view class="ordemuu_box_a">{{pecificquantity.meal}}</view>
+                        </view>
+                </view>
+                <image class="box_ord" src="http://image.sportfox.cn/793b220191225212205404721.png" ></image>
+            </view>
+            <!-- 邀请模块 -->
+            <view wx:if='{{currentIndex==2}}'>
+                 <view class="nvitation">
+                  <image  src="http://image.sportfox.cn/b93c7201912251545058046lALPDgQ9rYqlMnnMwMzw_240_192.png"></image> 
+                  </view>
+                  <view class="Invitation_a">
+                      <view class="Invitation_aa">
+                        分享即得50%off卷
+                      </view>
+                      <view class="Invitation_ab">
+                          好友注册即送50%off卷，TA得你也得
+                      </view>
+                      <view class="Invitation_ac">
+                            <view class="Invitation_box">
+                             <button open-type="share">
+                                <image class="Invitation_box_img" src="../../assets/icons/wx.png"></image>
+                               <!-- 微信好友 -->
+                                <view class="Invitation_boxli">微信好友</view>
+                                 </button>
+                            </view>
+                            <view class="Invitation_box">
+                                <image class="Invitation_box_img" src="../../assets/icons/peng.png"></image>
+                                <view class="Invitation_boxli">微信朋友圈</view>
+                            </view>
+                      </view>
+                  </view>   
+                
+            </view>
+            <!-- 个人资料模块 -->
+            <view wx:if='{{currentIndex==3}}'>
+                  <view class="personal"> 
+                        <view class="personal_a">
+                              <view  class="personal_aa">
+                                      头像
+                              </view>
+                              <image class="personal_aimg" src="{{userInfo.avatarUrl}}"></image>
+                        </view>
+                        <view class="personal_b">
+                                <view  class="personal_aa">
+                                      用户名
+                              </view>
+                              <view class="personal_ba">
+                                  {{userInfo.nickName}}
+                              </view>
+                        </view>
+                          <view class="personal_c">
+                                <view  class="personal_aa">
+                                      绑定手机
+                              </view>
+                              <view class="personal_ba">
+                              {{phone}}
+                              </view>
+                        </view>
+                  </view>
+                  <view class="img_per">
+                       <image  src="http://image.sportfox.cn/b78a520191225212308981023.png"></image>
+                  </view>
+                   <view class="img_pera">
+                       <image  src="http://image.sportfox.cn/793b220191225212205404721.png"></image>
+                  </view>
+                 
+                  
+            </view>
+            <!-- 帮助反馈模块 -->
+            <view wx:if='{{currentIndex==4}}'>
+              <view class="feedback">
+                    问题描述
+              </view>
+              <form>
+                  <textarea class="text_list" value="{{textdata}}" bindinput="textdata"  placeholder-clas='font-size:14px;'>
+                                    
+                  </textarea>
+              </form>
+                <view class="feedback">
+                    反馈附图
+              </view>
+               <view class="img_a">
+                      <view class="imgurl" wx:for="{{picPaths}}" wx:key="index" >
+                 
+                             <image class="imgurl_a"  src="{{item}}"></image>
+                             <image class="delete-btn" src="../../assets/icons/status.png" data-index="{{index}}" catchtap="deleteImg">
+                             
+                             </image>
+                      </view>
+                      <view class="feedback_img" bindtap='chooseImageTap'>
+
+                              <view >+</view>
+                      </view>
+               </view>
+              <view class="feet_bitt" bindtap="feedback">
+                        提交反馈
+              </view>
+            </view>
+      
+  
+</view>
+    <!-- 游客登录状态 -->
+<view wx:else>
+         <!-- 头部样式 -->
+    <view class="header">
+          <view class="header_a"></view>
+          <view class="header_b">
+                <view class="header_ba">
+                      <image class="header_baimga" src="../../assets/icons/you.png"></image>
+                      <!-- <view class="header_balist">Blue</view> -->
+                      <view class="header_boxa" catchtap="authorization"> 点击登录</view>
+                </view>
+                <view class="header_weet">
+                        <view class="header_weet_a">
+                                  <view class="header_weet_num">
+                                        0
+                                  </view>
+                                   <view class="header_weet_to">
+                                       就餐券
+                                  </view>
+                        </view>
+                        <view class="header_weet_b">
+                                  <view class="header_weetb_num">
+                                         0
+                                  </view>
+                                   <view class="header_weebt_to">
+                                       星元
+                                  </view>
+                        </view>
+                </view>
+          </view>
+    </view>
+     <!-- 遮挡物 -->
+         <view class="bix_li" >
+         
+         </view>
+    <!-- 滑动模块 -->
+    <view class="ordermy">
+          <view class=" {{currentIndex==1?'active':''}}" data-index='1' bindtap='currentTab'> 我的订单</view>
+          <view class=" {{currentIndex==2?'active':''}}" data-index='2' bindtap='currentTab'> 邀请好友</view>
+          <view class=" {{currentIndex==3?'active':''}}" data-index='3' bindtap='currentTab'> 个人资料</view>
+          <view class=" {{currentIndex==4?'active':''}}" data-index='4' bindtap='currentTab'> 帮助反馈</view>
+    </view>
+    <!-- 底部移动的样式 -->
+     <view>
+        <view class="xian" wx:if='{{currentIndex==1}}'></view>
+        <view class="xian {{currentIndex==2?'activeatra':''}}" wx:if='{{currentIndex==2}}'></view>
+        <view class="xian {{currentIndex==3?'activeatrb':''}}" wx:if='{{currentIndex==3}}'></view>
+        <view class="xian {{currentIndex==4?'activeatrc':''}}" wx:if='{{currentIndex==4}}'></view>
+     </view>
+       <!-- 订单模块 -->
+       <view wx:if='{{currentIndex==1}}'>
+          <view class="ordemuu" >
+                <view class="ordemuu_box">
+                    <view class="ordemuu_boxli">明档记录</view>
+                    <image class="ordemuu_boximg" src="../../assets/icons/ming.png"></image>
+                      <view class="ordemuu_box_a">0</view>
+                </view>
+                  <view class="ordemuu_box">
+                    <view class="ordemuu_boxli">包厢预约</view>
+                    <image class="ordemuu_boximg" src="../../assets/icons/bao.png"></image>
+                      <view class="ordemuu_box_a">0</view>
+                  </view>
+                  <view class="ordemuu_box">
+                    <view class="ordemuu_boxli">自助餐盘</view>
+                    <image class="ordemuu_boximg" src="../../assets/icons/zi.png"></image>
+                      <view class="ordemuu_box_a">0</view>
+                  </view>
+          </view>
+          <image class="box_ord" src="http://image.sportfox.cn/793b220191225212205404721.png" ></image>
+      </view>
+      <!-- 邀请模块 -->
+      <view wx:if='{{currentIndex==2}}'>
+            <image class="Invitation" src="../../assets/icons/qing.png"></image> 
+             <view class="Invitation_a">
+                 <view class="Invitation_aa">
+                   分享即得50%off卷
+                 </view>
+                 <view class="Invitation_ab">
+                    好友注册即送50%off卷，TA得你也得
+                 </view>
+                 <view class="Invitation_ac">
+                      <view class="Invitation_box">
+                           <image class="Invitation_box_img" src="../../assets/icons/wx.png"></image>
+                           <view class="Invitation_boxli">微信好友</view>
+                      </view>
+                      <view class="Invitation_box">
+                          <image class="Invitation_box_img" src="../../assets/icons/peng.png"></image>
+                           <view class="Invitation_boxli">微信朋友圈</view>
+                      </view>
+                 </view>
+             </view>   
+           
+      </view>
+      <!-- 个人资料模块 -->
+      <view wx:if='{{currentIndex==3}}'>
+      
+      </view>
+      <!-- 帮助反馈模块 -->
+      <view wx:if='{{currentIndex==4}}'>
+      
+      </view>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/storelist/storelist.wxml-->
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goBack">
+    <image src="../../images/back1.png"></image>
+  </view>
+  <view class="search">
+    <input placeholder="请输入地址寻找周边门店" bindinput="searchFit"></input>
+    <view class="searchImg">
+      <image src="../../images/search.png"></image>
+    </view>
+  </view>
+</view>
+<view wx:if='{{!isSearch}}'>
+  <view>
+    <view class="title">离我最近</view>
+    <view class="storelist">
+      <view class="listDetail" bindtap="cutShop" data-shopid="{{storeList1.id}}" data-shopname="{{storeList1.name}}">
+        <view class="address">
+          <view>{{storeList1.name}}</view>
+          <view>{{storeList1.distance}}m</view>
+        </view>
+        <view>
+          <view class="addetail">
+            <image style="width:28rpx;height:28rpx;margin-right:15rpx" src="../../images/address.png"></image>
+            {{storeList1.address}}
+          </view>
+          <text class="textdetail">查看详情</text>
+        </view>
+      </view>
+      <view class="enter" bindtap="gomap" data-shopid="{{storeList1.id}}">
+        <image src="../../images/enter2.png"></image>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="title">其他门店</view>
+    <view class="storelist" wx:for='{{storeList}}' wx:key="key">
+      <view class="listDetail" bindtap="cutShop" data-shopid="{{item.id}}" data-shopname="{{item.name}}">
+        <view class="address">
+          <view>{{item.name}}</view>
+          <view>{{item.distance}}m</view>
+        </view>
+        <view>
+          <view class="addetail">
+            <image style="width:28rpx;height:28rpx;margin-right:15rpx" src="../../images/address.png"></image>
+            {{item.address}}
+          </view>
+          <text class="textdetail">查看详情</text>
+        </view>
+      </view>
+      <view class="enter" bindtap="gomap" data-shopid="{{item.id}}">
+        <image src="../../images/enter2.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{isSearch}}'>
+  <view class="storelist" wx:for='{{searchList}}' wx:key="index">
+    <view class="listDetail" bindtap="cutShop" data-shopid="{{item.id}}" data-shopname="{{item.name}}">
+      <view class="address">
+        <view>{{item.name}}</view>
+        <view>{{item.distance}}m</view>
+      </view>
+      <view>
+        <view class="addetail">
+          <image style="width:28rpx;height:28rpx;margin-right:15rpx" src="../../images/address.png"></image>
+          {{item.address}}
+        </view>
+        <text class="textdetail">查看详情</text>
+      </view>
+    </view>
+    <view class="enter" bindtap="gomap" data-shopid="{{item.id}}">
+      <image src="../../images/enter2.png"></image>
+    </view>
+  </view>
+
+
+</view>

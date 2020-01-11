@@ -1,0 +1,64 @@
+<view>
+    <view class="header">
+    </view>
+    <view class="box">
+    </view>
+    <view class="box_list">
+        <view class="box_list_a">
+             <view class="box_list_for"> 拾味堂(江苏软件园A栋-1F店)</view>
+             <view class="box_list_lor"  wx:key='index'>
+                  <image class="box_list_lor_a" src="../../assets/icons/puanli.png"></image>
+                  <view class="box_list_lor_b">
+                      <view class="box_list_ho">{{arrlist.name}}</view>
+                       <view class="box_list_hoa">{{arrlist.content}}</view>
+                  </view>
+                  <view class="box_list_lor_c">
+                          <text style="font-size:8px;">X</text>1
+                  </view>
+                  <view class="box_list_lor_f">
+                        ￥{{arrlist.price}}
+                  </view>
+             </view>
+        </view>
+        <view class="box_list_b">
+            <view class="box_list_ba" bindtap="meanlonter">
+              <view class="box_list_ba_list">就餐劵<text class="ba_list">买10送10</text>,现买先送</view>
+              <image class="box_list_ba_img" src="../../assets/icons/jian.png"></image>
+            </view>
+            <view class="box_list_bb" bindtap="dinter">
+                 <view class="box_list_bb_li">就餐券</view>
+                 <view class="box_list_bb_la">
+                       <view class="weet_li" wx:if="{{prister==''}}">
+                           <image class="weet_img" src="../../assets/icons/hua.png"></image>
+                           <view class="weet_list">{{arrlength}}个可用</view>
+                       </view>
+                       <view class="infor" wx:else><text style="font-weight:500;">-￥</text>{{prister}}</view>
+                       <image  class="weet_li_a" src="../../assets/icons/qvejian.png"></image>
+                 </view>
+            </view>
+        </view>
+        <view class="box_list_c">
+            <view class="box_list_ca">选择付款方式</view>
+            <view class="box_list_cb">
+                  <view class="box_list_cba">
+                        <icon type="{{cartSelected==2 ? 'success' : 'circle'}}" color="#FBAF02" size="25" class="box_iocn" data-id="2" bindtap="ioc_oloick"></icon>
+                        <view class="box_i_wee">余额支付</view>
+                  </view>
+                  <view class="box_list_cba">
+                        <icon type="{{cartSelected==1 ? 'success' : 'circle'}}" color="#FBAF02" size="25" class="box_iocn_a" data-id="1" bindtap="ioc_oloick"></icon>
+                        <view class="box_i_weea">微信支付</view>
+                  </view>
+             </view>
+        </view> 
+    </view>
+    <view class="bottomtt">
+          <view class="list_co">
+              <view class="prind"> <text style="font-size:14px;font-weight:500;">￥</text>{{pricelont}}</view>
+              <view class="xian"></view>
+              <view class="x_list">已优惠￥{{prister}}</view>
+          </view> 
+          <view class="list_coa" bindtap="prinder">
+               去付款
+          </view>    
+    </view>
+</view>

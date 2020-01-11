@@ -1,0 +1,20 @@
+/* pages/authorization/authorization.wxss */
+page{
+  background: #FBAF02
+}
+.photo{
+  width: 554rpx;
+  height: 656rpx
+}
+.photo>image{
+  width: 100%;
+  height: 100%
+}
+.text{
+  width: 450rpx;
+  height: 380rpx;
+  color: #333;
+  font-size: 100rpx;
+  font-weight: bolder;
+  margin-left: 56rpx
+}

@@ -1,0 +1,21 @@
+var date_time = function (time) {//时间格式化
+  console.log(time)
+  if (!time) {
+    return
+  }
+  var timeNew = time.slice(5, 11)
+  var timeformat = timeNew.replace('-','.')
+  return timeformat
+}
+var number = function (num) {//保留两位小数
+  if (!time) {
+    return
+  }
+  // var newNum = num.Number()
+  var numforamt = num.toFixed(2)
+  return numforamt
+}
+module.exports = {
+  way: date_time,
+  numway: number
+}

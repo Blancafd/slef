@@ -1,0 +1,106 @@
+<view>
+     <view class="changefot">
+        <view class="changefot_a {{currentIndex==1?'active':''}}" data-index='1' bindtap='currentTab'>取餐盘</view>
+        <view class="changefot_a {{currentIndex==2?'active':''}}" data-index='2' bindtap='currentTab'>Sweet派送</view>
+         
+     </view>
+    
+      <view class="index_box">
+        <image class="img_list {{currentIndex==1?'activeatr':'activeatra'}}"  src="../../assets/icons/sanjioa.png"></image>
+      </view>
+      <view class="box_list">
+         <view wx:if="{{currentIndex==1}}">
+                    <view class="box_list_a" wx:for="{{canarr}}" wx:key='index' data-id="{{item.id}}"     wx:if="{{paymentcode==1}}">
+                        <view class="box_for"> 
+                            <image src="{{item.image}}" class="box_for_img"></image>
+                            <view class="box_for_list">
+                                <view class="box_for_list_a">{{item.name}}</view>
+                                <view class="box_for_list_b" wx:if="{{item.num>0}}">仅余{{item.num}}</view>
+                                 <view class="box_for_list_ba" wx:else>加紧补盘中</view>
+                                <view class="box_for_list_c">￥{{item.price}}</view>
+                            </view>
+                        </view>
+                        <view class="scroll_a" >
+                          <scroll-view scroll-x="true" bindscroll="scroll" style="white-space: nowrap;">
+                              <view class="box_list_b">
+                                    <view class="fonr_box">
+                                          <image src="../../assets/icons/fenye.png"></image>
+                                    </view>
+                                    <view class="meader">
+                                           <view class="meader_a">
+                                                <image src="../../assets/icons/buz.png"></image>
+                                           </view>
+                                           <view class="meader_b">
+                                             <text style="font-size:14px;">热量</text>(每100克)
+                                           </view>
+                                           <view class="meader_c {{currentxfont==2?'activea':''}}" catchtap="botonmer" data-id="2">
+                                                  千焦
+                                           </view>
+                                            <view class="meader_d {{currentxfont==1?'activea':''}}" data-id="1" catchtap="botonmer">
+                                                  千卡
+                                           </view>
+                                    </view >
+                                    <view class="currentin" wx:if="{{currentxfont==1}}">
+                                    
+                                            {{item.kilocar}} <text style="font-size:12px;font-weight:500;color:#868686;">千卡</text>
+                                            
+                                    </view>
+                                    <view class="currentin" wx:if="{{currentxfont==2}}">
+                                              {{item.kcal}}<text style="font-size:12px;font-weight:500;color:#868686;">千焦</text>
+                                    </view>
+                                    <view class="finter">
+                                           <view class="meader_a" >
+                                              <image src="../../assets/icons/cao.png"></image>
+                                           </view>
+                                           <view class="meader_b">
+                                             <text style="font-size:14px;">营养元素</text>(每100克)
+                                           </view>
+                                    </view>
+                                    <view class="boforin">
+                                            <image src="{{item.imgs[0]}}"></image>
+                                    </view>
+                                    <!-- <view class="inter_a">
+                                        {{item.content}}
+                                    </view> -->
+                              </view> 
+                              <view class="box_list_f">
+                                      <view class="fonr_box">
+                                          <image src="../../assets/icons/footb.png"></image>
+                                      </view> 
+                                      <view class="meader">
+                                            <view class="meader_a">
+                                                 <image src="../../assets/icons/foota.png"></image>
+                                            </view>
+                                            <view class="meader_b">
+                                              <text style="font-size:14px;">餐盘每格大约重量</text>(单位:克)
+                                            </view>
+                                      </view>
+                                       <view class="infor_der">
+                                              <image src="{{item.imgs[1]}}"></image>
+                                       </view>
+                              </view>
+                            </scroll-view>   
+                        </view>
+                        <view class="box_list_c"  bindtap="in_weeta" data-item="{{item}}">
+                              确认购买
+                        </view>
+                    </view>
+                     <!-- <view class="mentcode" wx:if="{{paymentcode==2}}">
+                            <view class="mentcode_a" >
+                              <image style="width:100%; height:100%;" src="../../assets/icons/code.png"></image>
+                            
+                            </view>
+                            <view class="index_a">请出示此二维码扫码取餐盘</view>
+                            <view class="index_afor">
+                                  <image style="width:100%; height:100%;" src="../../assets/icons/fornter.png">
+                                  
+                                  </image>
+                            </view>
+                     </view> -->
+         </view>
+             <view class="box_list_if" wx:if="{{currentIndex==2}}">
+               <image class="in_for" src="http://image.sportfox.cn/5007020191225212244274822.png"> </image>
+               <view class="in_fora">外卖功能即将上线，敬请期待！</view>
+             </view>
+      </view>
+</view>

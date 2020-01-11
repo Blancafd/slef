@@ -1,0 +1,11 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "自助餐盘",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "popup": "../../component/popup/popup"
+  }
+}

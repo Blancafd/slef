@@ -1,0 +1,67 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="detailbg">
+
+</view>
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goback">
+    <image src="../../images/backWhite.png"></image>
+  </view>
+  <view class="search">
+    确认订单
+  </view>
+</view>
+<view class="detaillist">
+  <view>
+    <view class="list">
+      <view>{{pageData.fit_name}}</view>
+    </view>
+    <view>
+      <view class="list1" wx:for='{{pageData.dish}}'>
+        <view class="detailImg">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view>
+          <view>
+            <view>{{item.dish_name}}</view>
+          </view>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="remark" bindtap="goremark">
+    <view>订单备注</view>
+    <view class="remarkEnter">
+      <view class="remarkText">{{remark}}</view>
+      <view class='enter'>
+        <image src="../../images/enter2.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="checkPaytype">
+      <view class="checkText">选择支付方式</view>
+      <view class='tableTap'>
+        <view>
+          <view class="selectStyle" bindtap="checktype" data-type="1">
+            <view class="selectDot" wx:if='{{payType == 1}}'></view>
+          </view>
+          <view class="Tabtime">余额支付</view>
+        </view>
+        <view>
+          <view class="selectStyle" bindtap="checktype" data-type="2">
+            <view class="selectDot"  wx:if='{{payType == 2}}'></view>
+          </view>
+          <view class="Tabtime">微信支付</view>
+        </view>
+      </view>
+    </view>
+</view>
+<view class="footer">
+  <view class="money">
+    <text>￥{{pageData.money}}</text>
+  </view>
+  <view bindtap="creatOrder">
+    去付款
+  </view>
+</view>

@@ -1,0 +1,74 @@
+<view>
+      <view class="header">
+    
+     </view> 
+     <view class="header_a">
+     
+     </view>
+     <view class="box"> 
+         <view class="box_a">
+            {{dataobj.fit_name}}
+         </view>
+         <view class="xian"></view>
+         <view class="bxo_reder">
+               <view class="bxo_redera">
+                   <image class="box_img" src="../../assets/icons/panzi.png"></image>
+                   <view class="bxo_redera_a">
+                        <view class="dera_a">
+                              {{dataobj.box_name}}
+                        </view>
+                        <view class="dera_b">
+                        {{dataobj.content}}
+                        </view>
+                   </view>
+               </view>
+               <view class="bxo_rederb">
+                    <view class="bxo_rederbc">
+                      <text style="font-size:8px;">X</text>1
+                    </view>
+                    <view class="bxo_rederd">
+                       <text style="font-weight:500;">￥</text>{{dataobj.price}}
+                    </view>
+               </view>
+         </view>
+         <view class="herad"></view>
+         <view class="in_box">
+                 <view class="in_box_a">
+                    订单号
+                 </view>
+                 <view class="in_box_b">
+                    {{dataobj.order_id}}
+                 </view>
+         </view>
+          <view class="xian"></view>
+          <view class="in_box">
+                 <view class="in_box_a">
+                    下单时间
+                 </view>
+                 <view class="in_box_b">
+                     {{dataobj.create_time}}
+                 </view>
+         </view>
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==1}}">
+        未支付
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==2}}">
+       带取餐盘
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==3}}">
+        以取餐盘
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==4}}">
+         退款中
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==5}}">
+         退款完成
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==6}}">
+        已完成
+     </view>
+     <view class="bottons" wx:if="{{dataobj.is_pay==7}}">
+        已取消
+     </view>
+</view>

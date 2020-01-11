@@ -1,0 +1,169 @@
+<!-- pages/mealCooking/mealCooking.wxml -->
+<!-- <view class="header" style="padding-top:{{statusBarHeight}}px">
+    <view class="header_title">餐品烹饪</view>
+    <image class="header_left_img" src="/images/mingdang/left.png" mode="aspectFill"></image>
+    
+    <image class="header_left_img2" src="/images/mingdang/listing.png" mode="aspectFill"></image>
+</view> -->
+<block wx:if="{{order.order_status == 2}}">
+    <view class="header" style="padding-top:{{statusBarHeight}}px">
+        <view class="header_title">餐品烹饪</view>
+        <image bindtap="goBack" class="header_left_img" src="/images/mingdang/left.png" mode="aspectFill"></image>
+        <image class="header_left_img2" src="/images/mingdang/listing.png" mode="aspectFill"></image>
+    </view>
+    <view class="title" style="padding-top:{{statusBarHeight+60}}px">用餐高峰，主厨火速烹饪中，稍待片刻！</view>
+    <!-- 取餐号 -->
+    <view class="qucan">取餐号</view>
+    <view class="number">{{order.meal_code}}</view>
+    <view class="anniu">
+        <view class="btn" bindtap="looker">查看取餐二维码</view>
+    </view>
+    <view class="quxiao" bindtap="quxiaoOrder">取消订单</view>
+</block>
+<block wx:if="{{order.order_status == 8}}">
+    <view class="header" style="padding-top:{{statusBarHeight}}px">
+        <view class="header_title">等待取餐</view>
+        <image bindtap="goBack" class="header_left_img" src="/images/mingdang/left.png" mode="aspectFill"></image>
+        <image class="header_left_img2" src="/images/mingdang/listing.png" mode="aspectFill"></image>
+    </view>
+    <view class="title" style="padding-top:{{statusBarHeight+60}}px">餐品已烹制完成，请前往门店凭取餐码取餐。</view>
+    <!-- 取餐号 -->
+    <view class="qucan" style="font-size:32rpx;font-weight: bold;">取餐号: {{order.meal_code}}</view>
+    <view class="people">李四先生，请扫码取餐</view>
+    <view class="qucan">
+        <image class="qucan_img" src="{{get_qrcode}}" mode="aspectFill"></image>
+    </view>
+    <view class="anniu">
+        <view class="btn">分享取餐码给好友</view>
+    </view>
+</block>
+<block wx:if="{{order.order_status == 3}}">
+    <view class="header" style="padding-top:{{statusBarHeight}}px">
+        <view class="header_title">取餐完成</view>
+        <image bindtap="goBack" class="header_left_img" src="/images/mingdang/left.png" mode="aspectFill"></image>
+        <image class="header_left_img2" src="/images/mingdang/listing.png" mode="aspectFill"></image>
+    </view>
+    <view class="title" style="padding-top:{{statusBarHeight+60}}px">感谢光临Sweet Town，祝您用餐愉快！</view>
+    <view class="anniu" style="padding-bottom:80rpx;">
+        <view class="btn">再来一单</view>
+    </view>
+</block>
+<view class="cooking" wx:if="{{order.order_status != 3}}">
+    <image class="cooking_img" src="http://image.sportfox.cn/5e82a201912261003548333cooking.png"></image>
+</view>
+<view class="cooking_list">
+    <view class="list">
+        <view class="dizhi">
+            <view class="dizhi_title">{{order.fit_name}}</view>
+            <view class="dizhi_xq">
+                <image class="dizhi_img" src="/images/mingdang/dizhi.png"></image>
+                {{order.fit_address}}
+            </view>
+        </view>
+        <view class="juli">
+            <view class="juli_mi">366m</view>
+            <view class="juli_xq">查看详情</view>
+        </view>
+        <view class="dizhi_right">
+            <image class="dizhi_right_img" src="/images/mingdang/orderRight.png"></image>
+        </view>
+    </view>
+</view>
+<view class="order">
+    <view class="order_cont">
+        <view class="order_title">订单号：{{order.order_sn}}</view>
+        <block wx:for="{{detail}}"  wx:key="{{detail}}">
+        <view class="order_list">
+            <image class="list_img" src="{{item.html_img}}" mode="aspectFill"></image>
+            <view class="menu_name">
+                <view class="list_name">{{item.dish_name}}</view>
+                <view class="list_guige" wx:if="{{item.spicy ==0}}">一{{item.unit}}</view>
+                <view class="list_guige" wx:if="{{item.spicy ==1}}">{{item.title}}/微辣</view>
+                <view class="list_guige" wx:if="{{item.spicy ==2}}">{{item.title}}/中辣</view>
+                <view class="list_guige" wx:if="{{item.spicy ==3}}">{{item.title}}/特辣</view>
+            </view>
+            <view class="list_num">
+                <text class="list_num_x" decode="{{true}}">X&nbsp;</text>
+                <text class="list_num_1">{{item.count}}</text>
+            </view>
+            <view class="list_price">
+                <text class="list_num_fu">￥</text>
+                <text class="list_num_money">{{item.price}}</text>
+            </view>
+        </view>
+        </block>
+     
+        <!-- 实付 -->
+        <view class="order_shifu">
+            <view class="order_shifu_left">共{{order.shop_count}}件商品</view>
+            <view class="order_shifu_right">
+                <text class="shifu_price">实付￥</text>
+                <text class="shifu_num">{{order.pay_money}}</text>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>
+<view class="time_list">
+    <view class="jiucan"  style="padding:0 40rpx;margin-top:12rpx;">
+        <view class="jiucan_left">订单备注</view>
+        <view class="jiucan_right">
+            <view class="jiucan_right_title" wx:if="{{order.remark}}">{{order.remark}}</view>
+            <view class="jiucan_right_title" wx:if="{{!order.remark}}">暂无</view>
+            <!-- <image class="right_img" src="/images/mingdang/orderRight.png"></image> -->
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view class="time_list" style="margin-bottom:50rpx;">
+    <view class="jiucan" style="padding:0 40rpx;margin-top:12rpx;">
+        <view class="i">
+            <view class="jiucan_left">下单时间</view>
+            <view class="jiucan_right">
+                <text class="jiucan_right_title2">{{order.create_time}}</text>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="i" wx:if="{{order.order_status ==3}}">
+            <view class="jiucan_left">取餐时间</view>
+            <view class="jiucan_right">
+                <text class="jiucan_right_title2">{{order.end_time}}</text>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>
+<view class="{{flag?'mask':''}}" catchtouchmove="ture"></view>
+<!-- 查看二维码 -->
+<view class="erweima {{erwemaShow?'displayblock':'displaynone'}}">
+    <image bindtap="erweimaYin" class="erweima_img" src="{{get_qrcode}}"></image>
+</view>
+<!-- 取消订单 -->
+<view class="noorder {{noorder?'displayblock':'displaynone'}}">
+    <view class="noorder_view">
+        <view class="choose_guige_left">
+            <view class="choose_guige_title">请选择真实的取消原因</view>
+            <view class="choose_guige_tip">您所选原因的真实度将影响店家对退款的处理结果</view>
+        </view>
+        <view class="choose_guige_close">
+            <image bindtap="closeNoOrder" class="close_img" src="/images/mingdang/close.png" mode="aspectFill"></image>
+        </view>
+        <view class="clear"></view>
+        <block wx:for="{{noorderList}}" wx:key="{{noorderList}}">
+            <view class="noorder_list" bindtap="chooseNoOrder" data-id="{{item.id}}" data-name="{{item.name}}">
+                <view class="noorder_list_left">{{item.name}}</view>
+                <view class="noorder_list_right">
+                    <image wx:if="{{noorderId != item.id}}" class="noorder_list_right_img" src="{{item.none_img}}" mode="aspectFill"></image>
+                    <image wx:if="{{noorderId == item.id}}" class="noorder_list_right_img" src="{{item.choose_img}}" mode="aspectFill"></image>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </block>
+        <!-- 其他原因的输入框 -->
+        <view class="qita" wx:if="{{noorderId == 4}}">
+            <textarea adjust-position="{{inputUp}}" value="{{qitaCont}}" class="qita_input" type="text" maxlength="200" bindinput="inputs" placeholder-style="color:#999;font-size:24rpx;line-height:0rpx;" placeholder="补充详细信息以便商家更快帮您处理" />
+        </view>
+        <!-- 按钮确定 -->
+        <view class="btn2" bindtap="sureNoOrder">确 认</view>
+    </view>
+</view>

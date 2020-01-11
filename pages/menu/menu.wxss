@@ -1,0 +1,188 @@
+/* pages/menu/menu.wxss */
+
+.header {
+  height: 80rpx;
+  position: relative;
+  display: flex;
+}
+
+.title {
+  color: #333;
+  font-size: 38rpx;
+  font-weight: 600;
+  line-height: 80rpx;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 162rpx;
+}
+
+image {
+  display: inline-block;
+}
+
+.news {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.news_img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.news_yuan {
+  position: absolute;
+  top: -8px;
+  left: 30rpx;
+  border-radius: 50%;
+  text-align: center;
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #e61212;
+}
+
+.day_eat {
+  color: #333;
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 60rpx;
+}
+
+.tuijian {
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 16rpx;
+}
+
+/* 滑动的菜单 */
+
+.menu {
+  margin-top: 40rpx;
+}
+
+.menu_scroll {
+  display: flex;
+  white-space: nowrap;
+  height: 730rpx;
+}
+
+.menu_scroll_view {
+  display: inline-block;
+  border-radius: 30rpx;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.12);
+  width: 400rpx;
+  height: 670rpx;
+  margin-right: 16rpx;
+}
+
+.menu_top {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.menu_img {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 30rpx 30rpx 0 0;
+}
+
+.menu_bottom {
+  padding: 0 32rpx;
+  padding-top: 20rpx;
+  white-space: normal;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+.menu_bottom_title {
+  color: #333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.menu_bottom_cont {
+  color: #999;
+  font-size: 24rpx;
+  padding-top: 8rpx;
+  height: 100rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+}
+
+.menu_btn {
+  height: 60rpx;
+  background-color: #fbaf02;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+}
+
+.menu_scroll_view:first-child {
+  margin-left: 16rpx;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 点击前往菜单 */
+
+.gomenu {
+  width: 306rpx;
+  height: 90rpx;
+  border-radius: 46rpx 0px 0px 46rpx;
+  background-color: #feefcc;
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 800;
+  line-height: 90rpx;
+  padding-left: 88rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 0px;
+}
+
+/* 进度条 */
+
+.jindu_title {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 160rpx;
+  left: 40rpx;
+}
+
+.jindutiao {
+  width: 400rpx;
+  height: 16rpx;
+  position: absolute;
+  bottom: 135rpx;
+  left: 40rpx;
+  background-color: #feefcc;
+  border-radius: 8rpx;
+}
+
+.jindu_bar {
+  background-color: #fbaf02;
+  height: 16rpx;
+  border-radius: 8rpx;
+}

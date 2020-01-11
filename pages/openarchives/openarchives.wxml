@@ -1,0 +1,361 @@
+<view>
+     <view class="headeraf">  
+          <view class="headera {{currentIndex==0?'active':''}}" bindtap='currentTab' data-id="0">全部</view>
+          <view class="headera {{currentIndex==1?'active':''}}" bindtap='currentTab' data-id="1">代付款</view>
+          <view class="headera {{currentIndex==2?'active':''}}" bindtap='currentTab' data-id="2">待取餐</view>
+          <view class="headera {{currentIndex==3?'active':''}}" bindtap='currentTab' data-id="3">已取消</view>
+    </view>
+    <view class="herrder">
+    </view>
+    <view wx:if="{{listarr.length>0}}">
+        <view class="box" wx:if="{{currentIndex==0}}" wx:for="{{listarr}}" wx:key="index" data-item="{{item}}" catchtap="details">
+            <view class="for_der">
+                  <view class="for_dera">
+                      {{item.fit_name}}
+                  </view>
+                    <view class="for_derb" wx:if="{{item.order_status==3}}">
+                      已完成
+                  </view>
+                    <view class="for_derba" wx:if="{{item.order_status==2}}">
+                      待取餐
+                  </view>
+                   <view class="for_derba" wx:if="{{item.order_status==5}}">
+                      烹饪中
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==6}}">
+                      退款中...
+                  </view>
+                  <view class="for_derbb" wx:if="{{item.order_status==4}}">
+                      已取消
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==7}}">
+                      退款完成
+                  </view>
+                    <view class="for_derbbc" wx:if="{{item.order_status==1}}">
+                      待付款
+                  </view>
+            </view>
+            <view class="index_ottt" wx:if="{{item.order_status==2}}">
+                {{item.meal_code}}
+            </view>
+            <view class="infor" wx:for="{{item.detail}}" wx:key="index">
+                    <view  class="infor_box">
+                          <image class="infor_img" src="{{item.html_img}}"></image>
+                          <view class="infor_box_a">
+                                  <view class="infor_box_ab">
+                                  {{item.dish_name}}
+                                  </view>
+                                  <view class="infor_box_ac">
+                                  {{item.title}}
+                                  </view>
+                          </view>
+                    </view>
+                    <view class="infor_in">
+                          <view class="infor_list">
+                            <text style="font-size:8px;">X</text>{{item.count}}
+                          </view>
+                          <view lass="infor_preni">
+                            <text style="font-weight:500;">￥</text>{{item.price}}
+                          </view>
+                    </view>
+            </view>
+            <view class="xian"></view>
+            <view class="disfor">
+                  <view class="disfor_a">
+                      {{item.create_time}}
+                  </view>
+                  <view class="disfont">
+                      <view class="disfont_a">
+                        共1件商品
+                      </view>
+                      <view class="disfont_b">
+                          <text style="font-weight:500;">实付￥</text>{{item.pay_money}}
+                      </view>
+                  </view>
+            </view>
+            <view class="bottfo"  wx:if="{{item.order_status==3}}">
+                <view  class="bottfo_a">
+                    再来一单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==2}}">
+                <view  class="bottfo_a"  catchtap="showPopup" data-id="{{item.id}}" data-is_pay="{{item.order_status}}">
+                    取消订单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==1}}">
+                <view  class="bottfo_a" catchtap="showPopup" data-id="{{item.id}}" data-is_pay="{{item.order_status}}">
+                  取消订单
+                </view>
+                  <view  class="bottfo_b" catchtap="showiss"  data-item="{{item}}" >
+                    去付款
+                </view>
+            </view>
+        </view>
+        <view class="box" wx:if="{{currentIndex==1}}" wx:for="{{listarr}}" wx:key="index" data-item="{{item}}" catchtap="details">
+            <view class="for_der">
+                  <view class="for_dera">
+                      {{item.fit_name}}
+                  </view>
+                    <view class="for_derb" wx:if="{{item.order_status==3}}">
+                      已完成
+                  </view>
+                    <view class="for_derba" wx:if="{{item.order_status==2}}">
+                      待取餐{{item.meal_code}}
+                  </view>
+                   <view class="for_derba" wx:if="{{item.order_status==5}}">
+                      烹饪中
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==6}}">
+                      退款中...
+                  </view>
+                  <view class="for_derbb" wx:if="{{item.order_status==4}}">
+                      已取消
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==7}}">
+                      退款完成
+                  </view>
+                    <view class="for_derbbc" wx:if="{{item.order_status==1}}">
+                      待付款
+                  </view>
+            </view>
+            <view class="infor" wx:for="{{item.detail}}" wx:key="index">
+                    <view  class="infor_box">
+                          <image class="infor_img" src="{{item.html_img}}"></image>
+                          <view class="infor_box_a">
+                                  <view class="infor_box_ab">
+                                  {{item.dish_name}}
+                                  </view>
+                                  <view class="infor_box_ac">
+                                  {{item.title}}
+                                  </view>
+                          </view>
+                    </view>
+                    <view class="infor_in">
+                          <view class="infor_list">
+                            <text style="font-size:8px;">X</text>{{item.count}}
+                          </view>
+                          <view lass="infor_preni">
+                            <text style="font-weight:500;">￥</text>{{item.price}}
+                          </view>
+                    </view>
+            </view>
+            <view class="xian"></view>
+            <view class="disfor">
+                  <view class="disfor_a">
+                      {{item.create_time}}
+                  </view>
+                  <view class="disfont">
+                      <view class="disfont_a">
+                        共1件商品
+                      </view>
+                      <view class="disfont_b">
+                          <text style="font-weight:500;">实付￥</text>{{item.pay_money}}
+                      </view>
+                  </view>
+            </view>
+            <view class="bottfo"  wx:if="{{item.order_status==3}}">
+                <view  class="bottfo_a">
+                    再来一单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==2}}">
+                <view  class="bottfo_a"  catchtap="showPopup" data-id="{{item.order_id}}" data-is_pay="{{item.is_pay}}">
+                    取消订单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==1}}">
+                <view  class="bottfo_a" catchtap="showPopup" data-id="{{item.order_id}}" data-is_pay="{{item.is_pay}}">
+                  取消订单
+                </view>
+                  <view  class="bottfo_b" catchtap="showiss"  data-item="{{item}}">
+                    去付款
+                </view>
+            </view>
+        </view>
+        <view class="box" wx:if="{{currentIndex==2}}" wx:for="{{listarr}}" wx:key="index" data-item="{{item}}" catchtap="details">
+            <view class="for_der">
+                  <view class="for_dera">
+                      {{item.fit_name}}
+                  </view>
+                    <view class="for_derb" wx:if="{{item.order_status==3}}">
+                      已完成
+                  </view>
+                    <view class="for_derba" wx:if="{{item.order_status==2}}">
+                      待取餐
+                  </view>
+                   <view class="for_derba" wx:if="{{item.order_status==5}}">
+                      烹饪中
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==6}}">
+                      退款中...
+                  </view>
+                  <view class="for_derbb" wx:if="{{item.order_status==4}}">
+                      已取消
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==7}}">
+                      退款完成
+                  </view>
+                    <view class="for_derbbc" wx:if="{{item.order_status==1}}">
+                      待付款
+                  </view>
+            </view>
+             <view class="index_ottt" wx:if="{{item.order_status==2}}">
+                {{item.meal_code}}
+            </view>
+            <view class="infor" wx:for="{{item.detail}}" wx:key="index">
+                    <view  class="infor_box">
+                          <image class="infor_img" src="{{item.html_img}}"></image>
+                          <view class="infor_box_a">
+                                  <view class="infor_box_ab">
+                                  {{item.dish_name}}
+                                  </view>
+                                  <view class="infor_box_ac">
+                                  {{item.title}}
+                                  </view>
+                          </view>
+                    </view>
+                    <view class="infor_in">
+                          <view class="infor_list">
+                            <text style="font-size:8px;">X</text>{{item.count}}
+                          </view>
+                          <view lass="infor_preni">
+                            <text style="font-weight:500;">￥</text>{{item.price}}
+                          </view>
+                    </view>
+            </view>
+            <view class="xian"></view>
+            <view class="disfor">
+                  <view class="disfor_a">
+                      {{item.create_time}}
+                  </view>
+                  <view class="disfont">
+                      <view class="disfont_a">
+                        共1件商品
+                      </view>
+                      <view class="disfont_b">
+                          <text style="font-weight:500;">实付￥</text>{{item.pay_money}}
+                      </view>
+                  </view>
+            </view>
+            <view class="bottfo"  wx:if="{{item.order_status==3}}">
+                <view  class="bottfo_a">
+                    再来一单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==2}}">
+                <view  class="bottfo_a"  catchtap="showPopup" data-id="{{item.order_id}}" data-is_pay="{{item.is_pay}}">
+                    取消订单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==1}}">
+                <view  class="bottfo_a" catchtap="showPopup" data-id="{{item.order_id}}" data-is_pay="{{item.is_pay}}">
+                  取消订单
+                </view>
+                  <view  class="bottfo_b" catchtap="showiss"  data-item="{{item}}">
+                    去付款
+                </view>
+            </view>
+        </view>
+        <view class="box" wx:if="{{currentIndex==3}}" wx:for="{{listarr}}" wx:key="index" data-item="{{item}}" catchtap="details">
+            <view class="for_der">
+                  <view class="for_dera">
+                      {{item.fit_name}}
+                  </view>
+                    <view class="for_derb" wx:if="{{item.order_status==3}}">
+                      已完成
+                  </view>
+                    <view class="for_derba" wx:if="{{item.order_status==2}}">
+                      待取餐:{{item.meal_code}}
+                  </view>
+                   <view class="for_derba" wx:if="{{item.order_status==5}}">
+                      烹饪中
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==6}}">
+                      退款中...
+                  </view>
+                  <view class="for_derbb" wx:if="{{item.order_status==4}}">
+                      已取消
+                  </view>
+                    <view class="for_derbb" wx:if="{{item.order_status==7}}">
+                      退款完成
+                  </view>
+                    <view class="for_derbbc" wx:if="{{item.order_status==1}}">
+                      待付款
+                  </view>
+            </view>
+            
+            <view class="infor" wx:for="{{item.detail}}" wx:key="index">
+                    <view  class="infor_box">
+                          <image class="infor_img" src="{{item.html_img}}"></image>
+                          <view class="infor_box_a">
+                                  <view class="infor_box_ab">
+                                  {{item.dish_name}}
+                                  </view>
+                                  <view class="infor_box_ac">
+                                  {{item.title}}
+                                  </view>
+                          </view>
+                    </view>
+                    <view class="infor_in">
+                          <view class="infor_list">
+                            <text style="font-size:8px;">X</text>{{item.count}}
+                          </view>
+                          <view lass="infor_preni">
+                            <text style="font-weight:500;">￥</text>{{item.price}}
+                          </view>
+                    </view>
+            </view>
+            <view class="xian"></view>
+            <view class="disfor">
+                  <view class="disfor_a">
+                      {{item.create_time}}
+                  </view>
+                  <view class="disfont">
+                      <view class="disfont_a">
+                        共1件商品
+                      </view>
+                      <view class="disfont_b">
+                          <text style="font-weight:500;">实付￥</text>{{item.pay_money}}
+                      </view>
+                  </view>
+            </view>
+            <view class="bottfo"  wx:if="{{item.order_status==3}}">
+                <view  class="bottfo_a">
+                    再来一单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==2}}">
+                <view  class="bottfo_a"  catchtap="showPopup" data-id="{{item.order_id}}" data-is_pay="{{item.is_pay}}">
+                    取消订单
+                </view>
+            </view>
+              <view class="bottfo"  wx:if="{{item.order_status==1}}">
+                <view  class="bottfo_a" catchtap="showPopup" data-id="{{item.order_id}}" data-is_pay="{{item.is_pay}}">
+                  取消订单
+                </view>
+                  <view  class="bottfo_b" catchtap="showiss"  data-item="{{item}}">
+                    去付款
+                </view>
+            </view>
+        </view>
+    </view>
+      <view wx:else>
+         
+               
+           <view class="wujil">
+             <image src="../../assets/icons/wujil.png"></image>
+           </view>
+           <view class="text_list">
+              您还没有明档记录，快去预订吧！
+           </view>
+   </view>
+ </view>
+  <popup id='popup'  class='tan'
+      title='提示' 
+      content='你确定取消订单吗？' 
+      btn_no='取消' 
+      btn_ok='确定'
+      bind:error="_error"  
+      bind:success="_success">
+  </popup>

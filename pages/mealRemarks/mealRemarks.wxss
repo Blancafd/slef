@@ -1,0 +1,182 @@
+/* pages/mealRemarks/mealRemarks.wxss */
+image {
+    display: inline-block;
+}
+
+.top {
+    background-color: #FBAF02;
+}
+
+.header {
+    background-color: #FBAF02;
+    height: 100rpx;
+    text-align: center;
+    position: relative;
+    line-height: 100rpx;
+    font-size: 40rpx;
+    color: #fff;
+}
+
+.header_left_img {
+    width: 48rpx;
+    height: 48rpx;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30rpx;
+}
+
+.cont {
+    background-color: #FBAF02;
+    height: 450rpx;
+    position: relative;
+}
+
+.text1 {
+    position: absolute;
+    top: 50rpx;
+    left: 50rpx;
+    color: #fff;
+    font-size: 60rpx;
+}
+
+.cutext {
+    color: #fff;
+    font-size: 60rpx;
+}
+
+.text2 {
+    position: absolute;
+    bottom: 50rpx;
+    left: 100rpx;
+    color: #fff;
+    font-size: 60rpx;
+}
+
+.text3 {
+    position: absolute;
+    bottom: 14rpx;
+    right: 60rpx;
+    color: #fff;
+    font-size: 60rpx;
+}
+
+.text4 {
+    position: absolute;
+    top: -22rpx;
+    right: 267rpx;
+    color: #fff;
+    font-size: 60rpx;
+
+}
+
+.text5 {
+    position: absolute;
+    top: 100rpx;
+    right: 130rpx;
+    color: #fff;
+    font-size: 60rpx;
+}
+
+.text6 {
+    position: absolute;
+    top: 200rpx;
+    right: 300rpx;
+    color: #fff;
+    font-size: 60rpx;
+}
+
+.xitext {
+    font-size: 40rpx;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.text7 {
+    position: absolute;
+    top: 160rpx;
+    left: 130rpx;
+     font-size: 40rpx;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.text8 {
+    position: absolute;
+    top: 100rpx;
+    left: 280rpx;
+     font-size: 40rpx;
+    color: #fff;
+    opacity: 0.7;
+
+}
+
+.text9 {
+    position: absolute;
+    top: 40rpx;
+    right: 60rpx;
+     font-size: 40rpx;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.text10 {
+    position: absolute;
+    bottom: 120rpx;
+    right: 150rpx;
+     font-size: 40rpx;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.kong {
+    height: 40rpx;
+    background-color: #FBAF02;
+}
+
+.order_cont {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.order_title {
+    height: 185rpx;
+    color: #888;
+    font-size: 36rpx;
+    background-color: #fff;
+    padding: 0 40rpx;
+    border-top-left-radius: 28rpx;
+    border-top-right-radius: 28rpx;
+    position: relative;
+    top: -10px;
+    padding-top: 20px;
+    z-index: 999;
+}
+
+.kong2 {
+    background-color: rgba(253, 215, 129);
+    margin: 0 50rpx;
+    height: 40rpx;
+    position: absolute;
+    width: 87%;
+    z-index: 99;
+    top: 10rpx;
+    border-radius: 20rpx;
+}
+
+.anniu {
+    
+    height: 86rpx;
+    line-height: 86rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 36rpx;
+    position: absolute;
+    bottom: 40rpx;
+    width: 100%;
+}
+.btn {
+    margin: 0 40rpx;
+    border-radius: 44rpx;
+    background-color: #FBAF02;
+}

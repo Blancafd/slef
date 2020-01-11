@@ -1,0 +1,8 @@
+<!--component/navbar/index.wxml-->
+<view class="custom flex_center navbar" style="padding-top:{{statusBarHeight}}px;text-align:center;font-weight:bold;">
+  <view class='back' bindtap='back'>
+    <image src='/images/back.png'></image>
+  </view>
+  <text>{{title}}</text>
+</view>
+<view class='empty_custom'  style="padding-top:{{statusBarHeight}}px"></view>

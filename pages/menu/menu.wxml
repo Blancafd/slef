@@ -1,0 +1,41 @@
+<!-- pages/menu/menu.wxml -->
+<view class="header" style="margin-top:{{statusBarHeight}}px">
+    <view class="title">明档专区</view>
+    <view class="news" bindtap="goMessage">
+        <image class="news_img" src="/images/mingdang/xiaoxi.png" mode="aspectFill"></image>
+        <view class="news_yuan">{{message}}</view>
+    </view>
+</view>
+<!-- 今天吃什么好呢？ -->
+<view class="day_eat">今天吃什么好呢？</view>
+<!-- 主厨推荐 -->
+<view class="tuijian">主厨推荐Top10，再也不为吃什么烦恼了</view>
+<!-- 滑动的菜单 -->
+<view class="menu">
+    <scroll-view scroll-x="{{true}}" class="menu_scroll"  bindscroll="menuscroll">
+        <!-- display: inline-block -->
+        <view class="menu_scroll_view" wx:for="{{top10List}}" wx:key="{{top10List}}">
+            <view class="menu_top">
+                <image class="menu_img" src="{{item.dish_img}}" mode="aspectFill"></image>
+            </view>
+            <view class="menu_bottom">
+                <view class="menu_bottom_title">{{item.dish_name}}</view>
+                <view class="menu_bottom_cont">{{item.dish_remark}}</view>
+                <view class="menu_btn" bindtap="goChoosefood">前往购买</view>
+            </view>
+        </view>
+    
+      
+    </scroll-view>
+</view>
+<!-- 进入条 -->
+<view class="jindu_title">
+    {{scroll}}/{{count}}
+</view>
+<view class="jindutiao">
+    <view class="jindu_bar" style="width:{{(100/count)*scroll}}%;"></view>
+</view>
+<!-- 点击前往菜单 -->
+<view class="gomenu" bindtap="goChoosefood">
+     点击前往菜单  →
+</view>

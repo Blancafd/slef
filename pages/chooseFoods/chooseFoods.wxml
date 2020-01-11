@@ -1,0 +1,207 @@
+<!-- pages/menus/choose-foods/choose-foods.wxml -->
+<view class="header" style="padding-top:{{statusBarHeight}}px">
+  <view class="header_left" bindtap="goBack">
+    <image class="header_left_img" src="/images/mingdang/left.png" mode="aspectFill"></image>
+  </view>
+  <view class="header_right" bindtap="gomealSearch">
+    <view class="header_right_cont">
+      <input type="text" class="serch" placeholder-style="color:#bbb;font-size:26rpx;" placeholder="请输入商品寻找美食" />
+      <image class="serch_img" src="/images/mingdang/search.png" mode="aspectFill"></image>
+      <!-- <image class="close_img" src="/images/mingdang/yuan_close.png" mode="aspectFill"></image> -->
+    </view>
+  </view>
+  <view class="clear"></view>
+</view>
+<!-- 轮播图 -->
+<view class="binner" style="padding-top:{{statusBarHeight +35}}px">
+  <view class="binner2">
+    <swiper class="binner_swiper" indicator-dots="{{true}}" indicator-color="#fff" indicator-active-color="#FBAF02" autoplay="{{true}}" current="0" interval="5000" duration="1000" circular="{{true}}" display-multiple-items="1" skip-hidden-item-layout="false">
+      <swiper-item>
+        <image class="carouselImg" src='http://image.sportfox.cn/3a369201912260951217370menu1.png' mode='aspectFill'></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="carouselImg" src='http://image.sportfox.cn/bcc9d201912260952121851menu2.png' mode='aspectFill'></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="carouselImg" src='http://image.sportfox.cn/20244201912260952312840menu3.png' mode='aspectFill'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<!-- 菜品种类 -->
+<view class="menu_type">
+  <scroll-view scroll-x="{{true}}" class="menu_scroll" bindscroll="menuscroll">
+    <block wx:for="{{menu_type}}" wx:key="{{menu_type}}">
+      <view class="menu_scroll_view {{item.id ==id? 'menu_scroll_active' : ''}} {{index == currentIndex-1?'rightBottom':''}} {{index == currentIndex+1?'leftBottom':''}}" bindtap="menubind" data-id="{{item.id}}" data-name="{{item.cate_name}}" data-index="{{index}}">
+        <image wx:if="{{item.id ==id}}" class="menu_scroll_img" src="{{item.checked_img}}" mode="aspectFill"></image>
+        <image wx:if="{{item.id !=id}}" class="menu_scroll_img" src="{{item.unchecked_img}}" mode="aspectFill"></image>
+        <view class="menu_scroll_title">{{item.cate_name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 菜单列表 -->
+<view class="menu_list">
+  <scroll-view scroll-y="true" style="height: 800rpx">
+
+    <view class="list" wx:for="{{foodList}}" wx:key="{{foodList}}" wx:for-index="foodKey" data-key="{{foodKey}}">
+      <view class="list_left">
+        <image class="list_left_img" src="{{item.html_img}}" mode="aspectFill"></image>
+        <image class="nofood" wx:if="{{item.remain_amount ==0}}" src="/images/mingdang/nofood.png" mode="aspectFill"></image>
+      </view>
+      <view class="list_right">
+        <view class="list_right_line">
+          <view class="list_right_title">{{item.dish_name}}</view>
+          <view class="list_right_yu" wx:if="{{item.remain_amount !=0 && item.remain_amount <=10}}">仅余{{item.remain_amount}}份</view>
+        </view>
+        <!-- 内容 -->
+        <view class="list_right_cont">特色：{{item.cook_method}}</view>
+        <view class="price">
+          <view class="price_left">
+            <text class="price_left_yuan {{item.remain_amount != 0 ?'':'color'}}">￥</text>
+            <text class="price_left_price {{item.remain_amount != 0 ?'':'color'}}">{{item.price}}</text>
+            <text class="price_left_ke">/约{{item.weight}}每{{item.unit}}</text>
+          </view>
+          <!-- 判断库存（剩余数量）是否售空 -->
+          <block wx:if="{{item.remain_amount !=0}}">
+            <!-- 有规格的样式 -->
+            <view class="price_right" wx:if="{{item.sku_num >1}}">
+              <view class="guige" bindtap="goGuige" data-id="{{item.id}}" data-key="{{foodKey}}">选规格</view>
+            </view>
+            <!-- 没有规格只能加数量的样式 -->
+            <view class="price_right" wx:if="{{item.sku_num ==1}}">
+              <image class="price_right_img" wx:if="{{item.count}}" src="/images/mingdang/jian.png" mode="aspectFill" bindtap="minusCount" data-key="{{foodKey}}"></image>
+              <text class="price_right_number" wx:if="{{item.count}}">
+                            {{item.count}}
+                        </text>
+              <image class="price_right_img" src="/images/mingdang/jia.png" mode="aspectFill" bindtap="addCount" data-key="{{foodKey}}"></image>
+            </view>
+          </block>
+
+
+          <view class="clear"></view>
+        </view>
+      </view>
+     
+    </view>
+
+
+  </scroll-view>
+</view>
+<!-- 底部 有选择的菜品时的样式 -->
+<view class="footer" wx:if="{{shopingNum !=0}}">
+
+  <view class="shop" bindtap="showCar">
+    <image class="footer_img" src="/images/mingdang/shoping_light.png" mode="aspectFill"></image>
+    <view class="footer_yuan">{{shopingNum}}</view>
+  </view>
+  <view class="footer_price" bindtap="showCar">
+    <text class="footer_price_yuan">￥</text>
+    <text class="footer_price_num">{{shopingMoney}}</text>
+  </view>
+
+
+  <view class="jiesuan" bindtap="goJiesuan">去结算</view>
+</view>
+
+<!-- 底部 没有选择的菜品时的样式 -->
+<view class="footer" wx:if="{{shopingNum ==0}}">
+  <view class="shop">
+    <image class="footer_img" src="/images/mingdang/shoping_black.png" mode="aspectFill"></image>
+  </view>
+  <view class="footer_price">
+    <text class="footer_none">未选购菜品</text>
+  </view>
+</view>
+<!-- 选规格的遮罩层 -->
+<view class="{{flag?'mask':''}}" catchtouchmove="ture"></view>
+<view class="{{shopCar?'mask':''}}" bindtap="hideShop"></view>
+
+<view class="footShop" wx:if="{{shopCar}}">
+  <view class="footShop_line1">
+    <view class="footShop_line1_left">已选商品</view>
+    <view class="footShop_line1_right" bindtap="empty">
+      <image class="footShop_right_img" src="/images/mingdang/del.png" mode="aspectFill"></image>
+      清空购物车</view>
+    <view class="clear"></view>
+  </view>
+  <view class="footShop_line2">
+    <block wx:for="{{shopingCard}}" wx:key="{{shopingCard}}" wx:for-index="shopKey">
+      <view class="footShop_list" wx:if="{{item.count != 0}}">
+        <view class="footShop_list_name">{{item.dish_name}}/{{item.title}}</view>
+        <view class="footShop_list_price">
+          <text class="footShop_list_qian">￥</text>
+          <text class="footShop_list_priceNum">{{item.price}}</text>
+        </view>
+        <view class="footShop_list_num">
+          <image class="footShop_list_img" src="/images/mingdang/jian.png" bindtap="reduceFootShop" data-sku_id="{{item.sku_id}}" data-price="{{item.price}}" data-count="{{item.count}}" data-flavor_id="{{item.flavor_id}}" data-key="{{shopKey}}" mode="aspectFill"></image>
+          <text class="footShop_list_Num2"> {{item.count}} </text>
+          <image class="footShop_list_img" src="/images/mingdang/jia.png" bindtap="addFootShop" data-sku_id="{{item.sku_id}}" data-price="{{item.price}}" data-count="{{item.count}}" data-flavor_id="{{item.flavor_id}}" data-key="{{shopKey}}" mode="aspectFill"></image>
+        </view>
+      </view>
+    </block>
+
+  </view>
+  <view class="footShop_line3">
+  </view>
+</view>
+
+
+
+
+<!-- 打烊 -->
+<view class="{{rest?'mask':''}}" bindtap="hideRest"></view>
+<view class="rest" wx:if="{{rest}}" bindtap="hideRest">
+
+  <image class="rest_img" src="http://image.sportfox.cn/ef452201912261004553287rest.png" mode="aspectFill"></image>
+  <view class="rest_line1">本店打烊啦!</view>
+  <view class="rest_line2">暂不接收新订单</view>
+  <view class="rest_line2">营业时间</view>
+  <view class="rest_line2">
+    午间：12:00-14:00
+  </view>
+  <view class="rest_line2">
+    晚间：18:00-20:00
+  </view>
+</view>
+<view class="kong2" wx:if="{{rest}}"></view>
+
+
+
+ <!-- 选规格的弹框 -->
+      <view class="choose_guige" wx:if="{{flag}}">
+        <view class="" style="height: 170rpx;padding: 0 40rpx;">
+          <view class="choose_guige_left">
+            <view class="choose_guige_title">{{dish_name}}</view>
+            <view class="choose_guige_tip">特色川菜</view>
+          </view>
+          <view class="choose_guige_close" bindtap="closeGuige">
+            <image class="close_img" src="/images/mingdang/close.png" mode="aspectFill"></image>
+          </view>
+          <view class="claer"></view>
+        </view>
+        <view class="guige_list">
+          <view class="guige_list_title">规格</view>
+
+          <view wx:for="{{guigeList}}" wx:for-index="guigeKey" wx:key="{{guigeList}}" class="guige_list_btn {{guigeId == item.id ?'choose':''}}" bindtap="chooseGuige" data-id="{{item.id}}" data-price="{{item.price}}" data-key="{{guigeKey}}">{{item.title}}</view>
+        </view>
+        <view class="guige_list" wx:if="{{ladu != ''}}">
+          <view class="guige_list_title">辣度</view>
+          <block wx:for="{{ladu}}" wx:key="{{ladu}}">
+            <view class="guige_list_btn {{laduId == item.flavor_id ?'choose':''}}" bindtap="chooseLadu" data-id="{{item.flavor_id}}">{{item.flavor_name}}</view>
+          </block>
+        </view>
+        <view class="guige_footer">
+          <text class="guige_footer_qian">￥</text>
+          <view>
+            <text class="guige_footer_money">{{guigeList[guigeKey].price}}</text>
+            <text class="guige_footer_weight">/ 约{{guigeList[guigeKey].weight}}每{{guigeList[guigeKey].unit}}</text>
+          </view>
+
+
+          <view class="gocanpan" bindtap="gocanpan">
+            <image class="gocanpan_img" src="/images/mingdang/jiucan.png" mode="aspectFill"></image>
+            加入餐盘
+          </view>
+        </view>
+      </view>

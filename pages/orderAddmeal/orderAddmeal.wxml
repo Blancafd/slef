@@ -1,0 +1,92 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="detailbg">
+
+</view>
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goback">
+    <image src="../../images/backWhite.png"></image>
+  </view>
+  <view class="search">
+    订单详情
+  </view>
+</view>
+<view class="detaillist">
+  <view>{{orderDetail.room_name}}</view>
+  <view class="discript">{{orderDetail.address}}</view>
+  <view class="list">
+    <view>当前包厢</view>
+    <view>{{orderDetail.room_name}}</view>
+  </view>
+  <view class="list">
+    <view>预约日期</view>
+    <view>{{format.way(orderDetail.start_date)}}</view>
+  </view>
+  <view class="list">
+    <view>预约时段</view>
+    <view>午餐({{orderDetail.start_time}}-{{orderDetail.end_time}})</view>
+    <!-- <view wx:if='{{orderDetail.luncth == 2}}'>晚餐({{orderDetail.start_time}}-{{orderDetail.end_time}})</view> -->
+  </view>
+  <view class="listbox">
+    <view class="list">
+      <view>预约套餐</view>
+      <view>{{orderDetail.meal[0].meal_name}}</view>
+    </view>
+    <view>
+      <view class="list1">
+        <view class="detailImg">
+          <image src="{{orderDetail.meal[0].meal_image}}"></image>
+        </view>
+        <view>
+          <view>
+            <view>{{orderDetail.meal[0].meal_name}}</view>
+
+          </view>
+          <view class="price">￥{{orderDetail.meal[0].meal_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="listbox">
+    <view class="list">
+      <view>额外加餐</view>
+      <view class="addbtn" bindtap="goaddMeal" data-orderid="{{orderDetail.id}}">
+        <image src="../../images/add.png"></image>
+      </view>
+    </view>
+    <view>
+      <view class="list1" wx:for='{{orderDetail.addDish}}'>
+        <view class="detailImg">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view>
+          <view>
+            <view>{{item.dish_name}}</view>
+
+          </view>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="remark">
+    <view>订单备注</view>
+    <view class="remarkEnter">
+      <view class="remarkText">{{remark}}</view>
+      <!-- <view class='enter'>
+        <image src="../../images/enter2.png"></image>
+      </view> -->
+    </view>
+
+  </view>
+  <view class="list">
+    <view>订单号</view>
+    <view>{{orderDetail.order_no}}</view>
+  </view>
+  <view class="list">
+    <view>下单时间</view>
+    <view>{{orderDetail.create_time}}</view>
+  </view>
+ 
+</view>
+ <view class="cancel" bindtap="cancelOrder"> 取消订单 </view>

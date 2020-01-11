@@ -1,0 +1,136 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goBack">
+    <image src="../../images/back1.png"></image>
+  </view>
+  <view class="search">
+    <input placeholder="请输入所需菜品" bindinput="getsrarchword"></input>
+    <view class="searchImg">
+      <image src="../../images/search.png"></image>
+    </view>
+  </view>
+</view>
+<view>
+  <view>
+    <view class="swiper_box">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#FBAF02">
+        <block wx:for="{{pageData[0].dish}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item.img}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="mealTab">
+    <view class="list {{currentIndex==index?'active':''}} {{index == currentIndex-1?'rightBottom':''}} {{index == currentIndex+1?'leftBottom':''}}" wx:for='{{pageData}}' wx:key='index' data-index="{{index}}" bindtap="checkMeal">
+      <view class="img">
+        <image src="{{item.cate_img}}"></image>
+      </view>
+      <view>{{item.cate_name}}</view>
+    </view>
+  </view>
+  <view class="mealListBox" wx:for='{{pageData}}' wx:key='index' wx:if='{{index == currentIndex}}'>
+    <view class="mealList" wx:for='{{item.dish}}' wx:for-item="self" wx:for-index="idx" wx:key='idx'>
+      <view class="mealmg">
+        <image src="{{self.img}}"></image>
+        <view class="isSellout" wx:if='{{self.num<1}}'>已售罄</view>
+      </view>
+      <view class="mealDetail">
+        <view class="mealname">{{self.name}} <view class="tag" wx:if='{{self.num<11 && self.num>0}}'> 仅剩{{self.num}}份 </view>  </view>
+        <view class="material">主料：{{self.material}}</view>
+        <view class="material">月售 {{self.sold}}</view>
+        <view class="price">
+          <view class="money {{self.num == 0?'activecolor':''}}" >￥{{self.price}}</view>
+          <view class="calculation" wx:if='{{self.num>1}}'>
+            <view class="reduce" bindtap="reduce" data-index="{{index}}" data-idx="{{idx}}" data-num="{{self.num}}" data-id="{{self.id}}" data-count='{{self.count}}' wx:if='{{self.countcar && isShownum}}'>
+              <image src="../../images/reduce.png"></image>
+            </view>
+            <view wx:if='{{self.countcar && isShownum}}'>{{self.countcar}}</view>
+            <view class="reduce" bindtap="add" data-index="{{index}}" data-idx="{{idx}}" data-num="{{self.num}}" data-id="{{self.id}}" data-count='{{self.count}}'>
+              <image src="../../images/add.png"></image>
+            </view>
+          </view>
+          <!-- <view class="reduce" wx:if='{{!self.count}}' bindtap="add" data-index="{{index}}" data-num="{{item}}"> <image src="../../images/add.png"></image> </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部 有选择的菜品时的样式 -->
+  <view class="footer" wx:if="{{shopingNum !=0}}">
+    <view class="shop" bindtap="showCar">
+      <image class="footer_img" src="../../images/shopcar.png" mode="aspectFill"></image>
+      <view class="footer_yuan">{{shopingNum}}</view>
+    </view>
+    <view class="footer_price">
+      <text class="footer_price_yuan">￥</text>
+      <text class="footer_price_num">{{priceTotal}}</text>
+    </view>
+    <view class="jiesuan" bindtap="comfirmOrder">去结算</view>
+  </view>
+
+  <!-- 底部 没有选择的菜品时的样式 -->
+  <view class="footer" wx:if="{{shopingNum ==0}}">
+    <view class="shop">
+      <image class="footer_img" src="../../images/unselectCar.png" mode="aspectFill"></image>
+    </view>
+    <view class="footer_price">
+      <text class="footer_none">未选购菜品</text>
+    </view>
+  </view>
+
+  <view class="mark" wx:if='{{shopCar}}' bindtap="hideShop"></view>
+  <view class="shopcar" wx:if='{{shopCar}}'>
+    <view class="carHead">
+      <view class="cartital">已选商品</view>
+      <view class="cartital" bindtap="clearCar">
+        <view class="clear">
+          <image src="../../images/clear.png"></image>
+        </view>
+        清空购物车
+      </view>
+    </view>
+    <view class="carlist" wx:for='{{carList}}'>
+      <view class="dishDetail">
+        <view>{{item.name}}</view>
+        <view>￥{{item.price}}</view>
+      </view>
+      <view class="calculation">
+        <view class="reduce" bindtap="reducecar" data-count="{{item.countcar}}" data-index="{{index}}" data-id='{{item.id}}'>
+          <image src="../../images/reduce.png"></image>
+        </view>
+        <view>{{item.count}}</view>
+        <view class="reduce" bindtap="addcar" data-count="{{item.countcar}}" data-index="{{index}}" data-id='{{item.id}}'>
+          <image src="../../images/add.png"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+<view class="searchPage" wx:if='{{searchPage}}'>
+  <view class="mealList" wx:for='{{searchlist}}'>
+    <view class="mealmg">
+      <image src="{{item.img}}"></image>
+    </view>
+    <view class="mealDetail">
+      <view class="mealname">{{item.name}}</view>
+      <view class="material">主料：{{item.material}}</view>
+      <view class="material">月售 {{item.sold}}</view>
+      <view class="price">
+        <view class="money">￥{{item.price}}</view>
+        <view class="calculation">
+          <view class="reduce" bindtap="searchreduce" wx:if='{{item.countcar>0}}' data-count="{{item.countcar}}" data-index="{{index}}" data-id='{{item.id}}'>
+            <image src="../../images/reduce.png"></image>
+          </view>
+          <view wx:if='{{item.countcar>0}}'>{{item.countcar}}</view>
+          <view class="reduce" bindtap="searchadd" data-count="{{item.countcar}}" data-index="{{index}}" data-id='{{item.id}}'>
+            <image src="../../images/add.png"></image>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+</view>

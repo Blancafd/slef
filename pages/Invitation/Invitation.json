@@ -1,0 +1,11 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "拾味堂好友邀请",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "popup": "../../component/popup/popup"
+  }
+}

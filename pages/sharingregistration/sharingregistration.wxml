@@ -1,0 +1,29 @@
+<view>
+  <view class="photo">
+    <image src="../../images/Photo.png"></image>
+  </view>
+  <view class="text">
+    <view>Welcome</view>
+    <view>to</view>
+    <view>拾味堂</view>
+  </view>
+
+</view>
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" lang="zh_CN" wx:if='{{!getPhone}}'>
+  <view> 点击进行授权 </view>
+  <view style="height:24rpx;width:34rpx;margin-left:36rpx">
+    <image style="height:100%;width:100%" src="../../images/enter.png"></image>
+  </view>
+</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if='{{getPhone}}'>
+  <view> 手机号授权 </view>
+  <view style="height:24rpx;width:34rpx;margin-left:36rpx">
+    <image style="height:100%;width:100%" src="../../images/enter.png"></image>
+  </view>
+</button>
+<!-- <button bindtap='onGetLocation'>
+  <view> 位置授权 </view>
+  <view style="height:24rpx;width:34rpx;margin-left:36rpx">
+    <image style="height:100%;width:100%" src="../../images/enter.png"></image>
+  </view>
+</button> -->

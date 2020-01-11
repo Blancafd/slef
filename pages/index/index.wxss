@@ -1,0 +1,549 @@
+page {
+  width: 750rpx;
+  overflow-x: hidden;
+}
+
+.head_top {
+  padding: 0rpx 20rpx;
+  width: 100%;
+  background: url('http://image.sportfox.cn/4200c201912161612319378headbg.png') no-repeat;
+  background-size: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: 10;
+}
+
+.more {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.head {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.head_img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.head_img>image {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  position: absolute;
+  top: 0rpx;
+  left: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.status {
+  width: 128rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background: #fbaf02;
+  border-radius: 26rpx;
+  color: #fff;
+  margin-left: 32rpx;
+}
+
+.active {
+  background: #ff7a7a !important;
+}
+
+.nowPreson {
+  font-size: 30rpx;
+  color: #fff;
+  margin-left: 34rpx;
+}
+
+.nowPreson>text {
+  font-size: 36rpx;
+  font-weight: bolder;
+}
+
+.head_logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_right {
+  display: flex;
+}
+
+.logo_one {
+  width: 88rpx;
+  height: 68rpx;
+}
+
+.logo_two {
+  width: 62rpx;
+  height: 50rpx;
+  margin-left: 16rpx;
+}
+
+.logo_two>image {
+  width: 100%;
+  height: 100%;
+}
+
+.logo_one>image {
+  width: 100%;
+  height: 100%;
+}
+
+.second {
+  width: 100%;
+  height: 128rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 190rpx;
+}
+
+.second>view {
+  text-align: center;
+}
+
+.logo_list {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.logo_list>image {
+  width: 100%;
+  height: 100%;
+}
+
+.logo_text {
+  color: #9a9a9a;
+  font-size: 22rpx;
+  line-height: 22rpx;
+}
+
+.guestName {
+  width: 100%;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 48rpx;
+  line-height: 58rpx;
+  margin-top: 24rpx;
+  padding-left: 40rpx;
+}
+
+.timeDetail {
+  display: flex;
+  align-items: center;
+}
+
+.openTime {
+  width: 100%;
+  display: flex;
+  padding: 20rpx 40rpx 0rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.open_text {
+  color: #333;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+
+.adress {
+  width: 250rpx;
+  height: 50rpx;
+  color: #fff;
+  background: #fbaf02;
+  font-size: 24rpx;
+  line-height: 45rpx;
+  border-radius: 26rpx;
+  text-align: center;
+}
+
+.adress>text {
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+.time {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.swiper_box {
+  width: 670rpx;
+  height: 310rpx;
+  margin: 40rpx auto 30rpx;
+}
+
+swiper {
+  border-radius: 10rpx;
+  overflow: hidden;
+  height: 100%;
+}
+
+.modular {
+  width: 690rpx;
+  height: 384rpx;
+  display: flex;
+  margin: 0 auto;
+}
+
+.modular_left {
+  width: 380rpx;
+  height: 384rpx;
+}
+
+.modular_left>image {
+  widows: 100%;
+  height: 100%;
+}
+
+.modular-right>view {
+  width: 322rpx;
+  height: 196rpx;
+}
+
+.modular-right>view>image {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  padding-right: 40rpx;
+  box-sizing: border-box;
+  margin-top: 26rpx;
+  line-height: 44rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+}
+
+.selectmenu {
+  width: 100%;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+
+.menuList {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+}
+
+.menuKind {
+  flex-shrink: 0;
+  width: 264rpx;
+  height: 224rpx;
+  border-radius: 16rpx;
+  box-shadow: 2rpx 2rpx 8rpx rgba(0, 0, 0, 0.12);
+  margin: 10rpx 8rpx;
+}
+
+.menuKind>view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuName {
+  width: 100%;
+}
+
+.menuName>view {
+  text-align: right;
+}
+
+.menuName>view:nth-of-type(1) {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 10rpx 20rpx 5rpx 0;
+}
+
+.menuName>view:nth-of-type(2) {
+  font-size: 20rpx;
+  line-height: 28rpx;
+  margin-right: 20rpx;
+  width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mainFood {
+  width: 226rpx;
+  height: 132rpx;
+}
+
+.table {
+  width: 100%;
+  height: 95rpx;
+  background: transparent;
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.boxS {
+  width: 100%;
+  height: 80rpx;
+  position: absolute;
+  background: #fff;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 84rpx;
+  height: 84rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.select:last-of-type {
+  margin-right: 30rpx;
+}
+
+.select>text {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+
+.act {
+  background: #fbaf02;
+  border-radius: 50%;
+}
+
+.act>text {
+  color: #fff;
+}
+
+.tableTap {
+  display: flex;
+  line-height: 48erpx;
+  justify-content: space-around;
+  margin-top: 40rpx;
+}
+
+.tableTap>view {
+  display: flex;
+}
+
+.selectStyle {
+  box-sizing: border-box;
+  border: 6rpx solid #fbaf02;
+  border-radius: 50%;
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectDot {
+  width: 24rpx;
+  height: 24rpx;
+  background: #fbaf02;
+  border-radius: 50%;
+}
+
+.Tabtime {
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.roomKind {
+  width: 248rpx;
+  height: 320rpx;
+  box-shadow: 2rpx 2rpx 8rpx rgba(0, 0, 0, 0.12);
+  border-radius: 16rpx;
+  margin: 10rpx;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.textDetail {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  padding: 16rpx;
+  width: 100%;
+}
+
+.textDetail>view:nth-of-type(1) {
+  text-align: center;
+  width: 96rpx;
+  height: 28rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  color: #999;
+  font-size: 20rpx;
+  float: right;
+}
+
+.textDetail>.active {
+  color: #fbaf02 !important;
+}
+
+.textDetail>view:nth-of-type(2) {
+  margin-top: 120rpx;
+  font-size: 20rpx;
+  color: #fff;
+}
+
+.img {
+  width: 248rpx;
+  height: 196rpx;
+}
+
+.img>image {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  width: 208rpx;
+  height: 60rpx;
+  border-radius: 32rpx;
+  background: #fbaf02;
+  color: #fff;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  margin: 30rpx auto;
+}
+
+.nolist {
+  width: 328rpx;
+  height: 358rpx;
+  position: relative;
+  margin: 0 auto;
+}
+
+.tishi {
+  position: absolute;
+  top: 182rpx;
+  left: 34rpx;
+  color: #520c0c;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.nolist>image {
+  width: 100%;
+  height: 100%;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: 5rpx;
+  float: left;
+  text-align: center;
+}
+
+.wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background: white;
+  border-radius: 15rpx;
+  border: 0rpx;
+  opacity: 1;
+}
+
+.wx-swiper-dot.wx-swiper-dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: white;
+  opacity: 1;
+}
+
+.wx-swiper-dot.wx-swiper-dot-active {
+  width: 72rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  opacity: 1;
+}
+
+.footer_tip {
+  margin: 0 40rpx;
+  position: fixed;
+  bottom: 30rpx;
+  width: 89%;
+  background-color: #fbaf02;
+  height: 112rpx;
+  border-radius: 16rpx;
+  z-index: 999;
+}
+
+.footer_content {
+  padding: 20rpx 30rpx;
+}
+
+.footer_content_left {
+  float: left;
+  color: #fff;
+}
+
+.footer_content_right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.footer_left_lin1 {
+  font-size: 28rpx;
+}
+
+.footer_left_lin2 {
+  font-size: 20rpx;
+  padding-top: 10rpx;
+}
+
+.footer_left_time {
+  color: #333;
+}
+
+.footer_content_right {
+  padding-top: 10rpx;
+}
+
+.footer_right_btn {
+  border-radius: 30rpx;
+  color: #fbaf02;
+  font-size: 28rpx;
+  background-color: #fff;
+  padding: 10rpx 30rpx;
+}
+.marbotm {
+  margin-bottom:115rpx;
+}

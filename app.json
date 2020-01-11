@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/menu/menu",
+    "pages/chooseFoods/chooseFoods",
+    "pages/mealSearch/mealSearch",
+    "pages/mealCooking/mealCooking",
+    "pages/confirmOrder/confirmOrder",
+    "pages/mealRemarks/mealRemarks",
+    "pages/appointroom/appointroom",
+    "pages/authorization/authorization",
+    "pages/mine/mine",
+    "pages/storelist/storelist",
+    "pages/roomDetail/roomDetail",
+    "pages/mealDetail/mealDetail",
+    "pages/orderDetail/orderDetail",
+    "pages/addMeal/addMeal",
+    "pages/orderAddmeal/orderAddmeal",
+    "pages/shopDetail/shopDetail",
+    "pages/addMealconfirm/addMealconfirm",
+    "pages/searchpage/searchpage",
+    "pages/dinnerplate/dinnerplate",
+    "pages/balcony/balcony",
+    "pages/openarchives/openarchives",
+    "pages/personalcenter/personalcenter",
+    "pages/stardetail/stardetail",
+    "pages/boxdetails/boxdetails",
+    "pages/platedetails/platedetails",
+    "pages/buffettray/buffettray",
+    "pages/mealcoupon/mealcoupon",
+    "pages/diningcoupon/diningcoupon",
+    "pages/orderlist/orderlist",
+    "pages/voucherrecharge/voucherrecharge",
+    "pages/starcircle/starcircle",
+    "pages/mealvoucherselection/mealvoucherselection",
+    "pages/stararea/stararea",
+    "pages/Invitation/Invitation",
+    "pages/filedetails/filedetails",
+    "pages/sharingregistration/sharingregistration",
+    "pages/ewPay/newPay",
+    "pages/messagecenter/messagecenter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FBAF02",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye_select.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "明档专区",
+        "iconPath": "images/mingdang.png",
+        "selectedIconPath": "images/md_select.png"
+      },
+      {
+        "pagePath": "pages/appointroom/appointroom",
+        "text": "预约包厢",
+        "iconPath": "images/yuyue.png",
+        "selectedIconPath": "images/yuyue_select.png"
+      },
+      {
+       "pagePath": "pages/personalcenter/personalcenter",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode_select.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "我们将获取您的位置信息，以便提供更好的服务"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,23 @@
+/* component/navbar/index.wxss */
+@import "../../app.wxss";/* 引入全局样式 */
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back{
+  width: 45rpx;
+  height: 45rpx;
+  position: absolute;
+  left: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back>image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.navbar>text{
+  margin: 0 auto;
+}

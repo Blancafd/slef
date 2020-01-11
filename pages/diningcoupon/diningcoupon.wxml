@@ -1,0 +1,80 @@
+<view wx:if="{{listarr.length>0}}">
+     <view class="headera">
+     </view>
+      <view class="box">
+      </view>
+        <view class="index_data">
+            <view    wx:for="{{listarr}}" wx:key='index'>
+                <view class="inder_box"  wx:if="{{ !item.isshow}}">
+                      <image  src="../../assets/icons/zutu.png" >
+                          <view class="box_num"><text style=" font-size:12px;font-weight:500;">￥</text>{{item.price}}</view>
+                          <view class="box_list">{{item.name}}</view>
+                          <view class="box_lista">有效期至{{item.end_time}}</view>
+                         <icon type="{{cartSelected==item.id ? 'success' : 'circle'}}" color="#FBAF02" size="25" class="box_data" data-id="{{item.id}}" data-price="{{item.price}}" bindtap="ioc_oloick"></icon>
+                          <view class="box_li" bindtap="inder_iss" data-id="{{index}}">
+                              <view class="box_lia">
+                                    使用规则
+                              </view>
+                              <image src="../../assets/icons/xiangxia.png" class="box_liomg"></image>
+                          </view>
+                      </image>
+                </view>
+                <view class="inder_boxa" wx:if="{{item.isshow}}">
+                    <image  src="../../assets/icons/zutua.png" >
+                          <view class="box_num"><text style=" font-size:12px;font-weight:500;">￥</text>{{item.price}}</view>
+                          <view class="box_list">{{item.name}}</view>
+                          <view class="box_lista">有效期至{{item.end_time}}</view>
+                          <icon type="{{cartSelected==item.id ? 'success' : 'circle'}}" color="#FBAF02" size="25" class="box_data" data-id="{{item.id}}" bindtap="ioc_oloick"></icon>
+                         
+                          <view class="box_li">
+                              <view class="box_lia">
+                                    使用规则
+                              </view>
+                              <image src="../../assets/icons/xiangxiaa.png" class="box_liomg"  bindtap="inder_iss" data-id="{{index}}"></image>
+                          </view>
+                          <view class="for_list">
+                                1、不可兑换现金不可兑换现金不可兑换现金不可兑换现金不可
+                          </view>
+                            <view class="for_lista">
+                              2、不可兑换现金
+                          </view>
+                            <view class="for_listb">
+                                3、不可兑换现金
+                          </view>
+                      </image>
+                </view>
+            </view>
+
+         </view>
+      <view class="bottomera">
+      
+      </view>
+      <view class="bottleft" >
+          <view class="bottleft_a">
+              <view class="bottleft_aa">已选择{{number}}张，可抵扣<text style="font-size:18px;color:rgba(255,122,122,1);font-weight:bold">￥{{onja}}</text></view>
+          </view>
+          <view class="bottleft_b" bindtap="oredter">
+              去使用
+          </view>
+       </view>
+</view>
+<view wx:else>
+        <view class="header">
+           <!-- <view  class="header_a">
+                  <view>就餐券</view>
+                  <view class="header_b"></view>
+           </view> -->
+           <!-- <view class="header_e" bindtap="starcircle">
+                 星圆
+           </view> -->
+    </view>
+    <view class="imgurl" >
+        <image class="imgurl" src="http://image.sportfox.cn/49ce82019122611160981864454545.png"></image>
+    </view>
+     <view class="imgurl_list">
+         你还没有就餐劵，赶紧前去购买吧！
+     </view>
+      <view class="bottomer" bindtap="mealvoucherselection">
+           购买就餐券
+      </view>
+</view>

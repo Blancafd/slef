@@ -1,0 +1,68 @@
+<view class="content">
+<!--wx:if="{{sweepshow}}"-->
+<view class="bigbox" >
+<view class="codeimg"><image src="../../assets/images/codelogo.png"/></view>
+<view class="codes">
+<view class='box' >
+      <image class='img' src="{{domain}}shopmember/getPaycode?openid={{openid}}&action={{action}}"></image>
+</view>
+<view class="pic" bindtap='refresh'>
+<view class="fresh"><image src="../../assets/images/fresh.png"/></view>
+<view>点击刷新付款码</view>
+</view>
+</view>
+<view class="line"></view>
+
+<view class="money">
+  <view class="bag"><image src="../../assets/images/bag.png"/></view>
+  <view class="title">我的钱包</view>
+</view>
+<view class="price">
+    <view class="pay">
+    <view style="font-size:40rpx;color:#2D9BFD">{{money}}</view>
+    <view>余额</view>
+    </view>
+    <view class="star">
+    <view style="font-size:40rpx;color:#FF8640">{{star}}</view>
+    <view>星币</view>
+    </view>
+     <view class="card">
+    <view style="font-size:28rpx;color:#4A4A4A;margin-bottom:13rpx;">敬请期待</view>
+    <view>礼品卡</view>
+    </view>
+</view>
+
+</view>
+
+<view  class="bottom">
+  <view bindtap="sweepcodes" data-id="2">
+    <view class="scand" wx:if="{{isshow==1}}"><image src="../../assets/images/fk.png"/></view>
+    <view class="scand" wx:if="{{isshow==2}}"><image src="../../assets/images/fk1.png"/></view>
+    <view>扫码</view>
+  
+   </view>
+
+
+
+  <view bindtap="payment" class="Payment" data-id="1">
+    <view class="fs" wx:if="{{is==1}}"><image src="../../assets/images/sk.png"/></view>
+    <view class="fs" wx:if="{{is==2}}"><image src="../../assets/images/sk1.png"/></view>
+    <view>付款码</view>
+  </view>
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

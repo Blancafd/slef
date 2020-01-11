@@ -1,0 +1,103 @@
+<!-- pages/confirmOrder/confirmOrder.wxml -->
+<!-- 确认订单 -->
+<view class="top" style="height:{{statusBarHeight}}rpx"></view>
+<view class="header" style="margin-top:{{statusBarHeight}}rpx">
+  <view class="header_left" bindtap="goBack">
+    <image class="header_left_img" src="/images/mingdang/left_white.png" mode="aspectFill"></image>
+  </view>
+  <view class="header_title">确认订单</view>
+</view>
+<!-- 确认订单的 -->
+<view class="order_cont" style="margin-top:{{statusBarHeight+100}}rpx">
+  <!-- 标题 -->
+  <view class="kong"></view>
+  <view class="kong2"></view>
+  <view class="order_title">拾味堂(江苏软件园A栋-1F店)</view>
+  <view class="order_list">
+    <view class="list" wx:for="{{shopingCard}}" wx:key="{{shopingCard}}">
+      <image class="list_img" src="{{item.html_img}}" mode="aspectFill"></image>
+      <view class="menu_name">
+        <view class="list_name">{{item.dish_name}}</view>
+        <view class="list_guige" wx:if="{{!item.title}}">一份</view>
+        <view class="list_guige" wx:if="{{item.title}}">{{item.title}}/
+          <text wx:if="{{item.spicy ==1}}">微辣</text>
+          <text wx:if="{{item.spicy ==2}}">中辣</text>
+          <text wx:if="{{item.spicy ==3}}">特辣</text>
+        </view>
+      </view>
+      <view class="list_num">
+        <text class="list_num_x" decode="{{true}}">X&nbsp;</text>
+        <text class="list_num_1">{{item.count}}</text>
+      </view>
+      <view class="list_price">
+        <text class="list_num_fu">￥</text>
+        <text class="list_num_money">{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 预计取餐时间 -->
+<view class="time">
+  <view class="time_title">
+    <view class="time_title_left">预计取餐时间</view>
+    <view class="time_title_right">约{{yuyueTime}}可取</view>
+    <view class="clear"></view>
+  </view>
+  <!-- 就餐券 -->
+  <view class="coupon" bindtap="gopurchase">
+    <text class="coupon_none">就餐券</text>
+    <text class="coupon_color">买10送10</text>
+    <text class="coupon_none">，现买立送</text>
+    <image class="coupon_img" src="/images/mingdang/orderColorRight.png"></image>
+  </view>
+  <!-- 就餐券 -->
+  <view class="jiucan" bindtap="goMealCoupon">
+    <view class="jiucan_left">就餐券</view>
+    <view class="jiucan_right">
+      <view class="jiucan_right_box" wx:if="{{voucher_id ==0}}">
+        <image class="jiucan_right_img" src="/images/mingdang/jiucan.png"></image>
+        {{user_voucher}}个可用
+      </view>
+      <view class="jiucan_right_box2" wx:if="{{voucher_id !=0}}">
+        <text class="jiucan_right_line1">-￥</text>
+        <text class="jiucan_right_line2">{{reduce_price}}</text>
+      </view>
+      <image class="right_img" src="/images/mingdang/orderRight.png"></image>
+    </view>
+    <view class="clear"></view>
+  </view>
+</view>
+<view class="jiucan" bindtap="goMealRemarks" style="padding:0 40rpx;margin-top:12rpx;">
+  <view class="jiucan_left">订单备注</view>
+  <view class="jiucan_right">
+    <view class="jiucan_right_title" wx:if="{{!remark}}">口味、偏好等要求</view>
+    <view class="jiucan_right_title"  wx:if="{{remark}}">{{remark}}</view>
+    <image class="right_img" src="/images/mingdang/orderRight.png"></image>
+  </view>
+  <view class="clear"></view>
+</view>
+<!-- 选择付款方式 -->
+<view class="pay">
+  <view class="pay_title">选择付款方式</view>
+  <view class="pay_cont">
+    <view class="pay_yu" bindtap="pay" data-id="1">
+      <image wx:if="{{payid ==1}}" class="yu_img" src="/images/mingdang/pay_choose.png"></image>
+      <image wx:if="{{payid !=1}}" class="yu_img" src="/images/mingdang/pay_none.png"></image>
+      <view class="yu">余额支付</view>
+    </view>
+    <view class="pay_yu" bindtap="pay" data-id="2">
+      <image wx:if="{{payid ==2}}" class="yu_img" src="/images/mingdang/pay_choose.png"></image>
+      <image wx:if="{{payid !=2}}" class="yu_img" src="/images/mingdang/pay_none.png"></image>
+      <view class="yu">微信支付</view>
+    </view>
+  </view>
+</view>
+<!-- 底部 -->
+<view class="footer">
+  <text class="footer_qian">¥</text>
+  <text class="footer_price"  wx:if="{{voucher_id ==0}}">{{shopingMoney}}</text>
+  <text class="footer_price"  wx:if="{{voucher_id !=0}}">{{priceAfter}}</text>
+  <view class="line" wx:if="{{voucher_id !=0}}"></view>
+  <text class="footer_youhui" wx:if="{{voucher_id !=0}}">已优惠￥{{reduce_price}}</text>
+  <view class="footer_right" bindtap="goMealCooking">去付款</view>
+</view>

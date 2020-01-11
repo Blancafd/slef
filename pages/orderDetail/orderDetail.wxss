@@ -1,0 +1,250 @@
+/* pages/orderDetail/orderDetail.wxss */
+.detailbg{
+  background: #FBAF02;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  z-index: -10
+}
+.detailbg>image{
+  width: 100%;
+  height: 100%
+}
+.head{
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.back{
+  width: 48rpx;
+  height: 48rpx;
+  position: fixed
+}
+.back>image{
+  width: 100%;
+  height: 100%
+}
+.remarkText{
+  height: 100%;
+  width: 380rpx;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.search{
+  color: #fff;
+  font-size: 40rpx;
+  margin: 0 auto
+}
+.detaillist{
+  padding: 50rpx 0rpx 98rpx;
+  position: fixed;
+  bottom: 98rpx;
+
+  width: 100%;
+  height: 1070rpx;
+  background: #fff;
+  border-top-left-radius: 60rpx;
+  border-top-right-radius: 60rpx;
+  box-sizing: border-box;
+
+}
+.detaillist>view{
+  padding: 0rpx 40rpx;
+  
+}
+
+.remark,.list{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 80rpx;
+  border-top: 1rpx solid #F8F8F8;
+  font-size: 30rpx;
+  font-weight: bolder
+}
+.list1{
+  display: flex;
+  width: 646rpx;
+  height: 130rpx;
+  box-shadow:2rpx 2rpx 8rpx rgba(0,0,0,0.12);
+  border-radius:30rpx;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 28rpx
+}
+.list1>view:nth-of-type(2){
+  padding: 0rpx 32rpx;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.detailImg{
+  width: 174rpx;
+  height: 130rpx
+}
+.detailImg>image{
+  width: 100%;
+  height: 100%
+}
+.detailBox{
+  padding: 50rpx 0rpx 98rpx;
+  position: fixed;
+  bottom: 86rpx;
+  width: 100%;
+  height: 1000rpx;
+  background: #fff;
+  border-top-left-radius: 60rpx;
+  border-top-right-radius: 60rpx;
+  box-sizing: border-box;
+}
+.tishi{
+  font-size: 30rpx;
+  color: #333;
+  height: 80rpx;
+  line-height: 80rpx
+}
+.tishi>text{
+  font-size: 20rpx;
+  color: #999
+}
+.selectStyle {
+  margin-right: 20rpx;
+  box-sizing: border-box;
+  border: 6rpx solid #fbaf02;
+  border-radius: 50%;
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.selectDot {
+  width: 24rpx;
+  height: 24rpx;
+  background: #fbaf02;
+  border-radius: 50%;
+}
+.type{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80rpx
+}
+.type>view:nth-of-type(1){
+  display: flex;
+  align-items: center
+
+}
+.remark{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 80rpx;
+  border-top: 12rpx solid #F6F6F6;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  font-weight: bolder
+}
+.remarkEnter{
+  display: flex;
+  align-items: center;
+  color: #999999;
+  font-size: 30rpx
+}
+.enter{
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 20rpx
+}
+.enter>image{
+  width: 100%;
+  height: 100%
+}
+.tableTap {
+  display: flex;
+  line-height: 28rpx;
+  justify-content: space-around;
+  margin-top: 28rpx;
+  align-items: center
+}
+.price{
+  font-size: 34rpx;
+  color: #333;
+  font-weight: bold
+}
+.tableTap>view {
+  display: flex;
+  align-items: center
+}
+
+.selectStyle {
+  box-sizing: border-box;
+  border: 6rpx solid #fbaf02;
+  border-radius: 50%;
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.selectDot {
+  width: 24rpx;
+  height: 24rpx;
+  background: #fbaf02;
+  border-radius: 50%;
+}
+.checkPaytype{
+box-sizing: border-box;
+border-bottom: 12rpx solid #F6F6F6;
+border-top: 12rpx solid #F6F6F6;
+height: 174rpx
+}
+.checkText{
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 28rpx;
+  
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  height: 98rpx;
+  width: 100%;
+  display: flex;
+  align-items: center
+}
+.footer>view{
+  display: flex;
+  align-items: center;
+
+}
+.discript{
+  margin: 25rpx 0;
+  font-size: 28rpx;
+  color: #8A8A8A
+}
+.footer>view:nth-of-type(1){
+  width: 540rpx;
+  height: 100%;
+  background: #555555;
+   padding-left: 50rpx;
+   box-sizing: border-box
+}
+.footer>view:nth-of-type(2){
+  height: 100%;
+  flex: 1;
+  background: #FBAF02;
+  justify-content: center;
+  color: #fff
+   
+}
+.money{
+  font-size: 28rpx;
+  font-weight: bolder;
+  color: #fff
+}

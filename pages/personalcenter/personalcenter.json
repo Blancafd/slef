@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sticky": "../../../component/sticky/sticky"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#FBAF02",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+
+}

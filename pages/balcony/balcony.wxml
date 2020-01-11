@@ -1,0 +1,311 @@
+<view >
+
+     <view class="header">  
+          <view class="headera {{currentIndex==0?'active':''}}" bindtap='currentTab' data-id="0">全部</view>
+          <view class="headera {{currentIndex==1?'active':''}}" bindtap='currentTab' data-id="1">待赴约</view>
+          <view class="headera {{currentIndex==2?'active':''}}" bindtap='currentTab' data-id="2">已取消</view>
+    </view>
+     <view class="herrder">
+    </view>
+     <view wx:if="{{listarr.length>0}}">
+        <view class="box" wx:if="{{currentIndex==0}}" wx:for='{{listarr}}' wx:key='index' data-item="{{item}}" catchtap="boxdetails">
+              <view class="box_lia">
+                      <view class="box_liaa">
+                          预约时间：{{item.start_date}} {{item.start_time}}-{{item.end_time}}
+                      </view>
+                      <view class="box_liab" wx:if="{{item.order_status==2}}">
+                            待赴约
+                      </view>
+                        <view class="box_liabtiu"  wx:if="{{item.order_status==3}}">
+                            退款中...
+                      </view>
+                        <view class="box_liabwan"  wx:if="{{item.order_status==6}}">
+                          已完成
+                      </view>
+                      <view class="box_liabtiu"  wx:if="{{item.order_status==4}}">
+                            退款完成
+                      </view>
+              </view>
+              <view class="box_lib" wx:for='{{item.meal}}' wx:key='index'>
+                      <view class="box_liba">
+                                <image class="box_libaimg" src="{{item.meal_image}}"></image>
+                                <view class="box_libab">
+                                        <view class="box_libaba">
+                                            {{item.meal_name}}
+                                        </view >
+                                        <view class="box_libabb">
+                                          {{item.meal_introduce}}
+                                        </view>
+                                </view>
+                      </view>
+                      <view class="box_libb">
+                                    ￥{{item.meal_price}}
+                      </view>
+              </view>
+              
+              <view class="weetat" wx:if="{{item.addDish.length>0}}"> 
+                额外餐品
+              </view>
+                <view class="hidmat" wx:for='{{item.addDish}}' wx:key='index'>
+                    <view class="hidmat_a">
+                          <image class="hidmat_img" src="{{item.img}}"></image>
+                            <view class="infor">
+                                  <view class="infor_a">
+                                      {{item.dish_name}}
+                                  </view>
+                                    <view class="infor_b">
+                                      {{item.material}}
+                                  </view>
+                            </view>
+                      </view>
+                      <view class="hidmat_b">
+                            <view class="inmead">
+                                <text class="inmead_a">X</text>{{item.dish_sum}}
+                            </view>
+                            <view class="in_prier">
+                                  ￥{{item.price}}
+                            </view>
+                      </view>
+                </view>
+                <view class="xian"></view>
+                <view class="meade">
+                    <view class="meade_a">
+                        {{item.create_time}}
+                    </view>
+                    <view class="meade_b">
+                              <view class="meade_ba">
+                                共{{item.shop_num}}件商品
+                              </view>
+                              <view class="meade_bb">
+                                  <text style="font-weight:500;">实付￥</text>{{item.money}}
+                              </view>
+                    </view>
+                </view>
+              
+                  <view class="botttcon" wx:if="{{item.order_status==2}}" catchtap="showPopup" data-order_no="{{item.order_no}}">
+                      <view class="botttcon_a" >
+                          取消预约
+                      </view>
+                      
+                  </view>
+                    <view class="botttcon" wx:if="{{item.order_status==6}}" catchtap="boxiang">
+                      <view class="botttcon_a" >
+                          再来一单
+                      </view>
+                      
+                  </view>
+        </view>
+    </view>
+    <view wx:else>
+           <view class="wujil">
+             <image src="../../assets/icons/wujil.png"></image>
+           </view>
+           <view class="text_list">
+              您还没有包厢记录，快去预订吧！
+           </view>
+   </view>
+   <view wx:if="{{listarr.length>0}}">
+      <view class="box" wx:if="{{currentIndex==1}}" wx:for='{{listarr}}' wx:key='index' data-item="{{item}}" catchtap="boxdetails">
+           <view class="box_lia">
+                   <view class="box_liaa">
+                       预约时间：{{item.start_date}} {{item.start_time}}-{{item.end_time}}
+                   </view>
+                   <view class="box_liab" wx:if="{{item.order_status==2}}">
+                         待赴约
+                   </view>
+                     <view class="box_liabtiu"  wx:if="{{item.order_status==3}}">
+                         退款中...
+                   </view>
+                    <view class="box_liabwan"  wx:if="{{item.order_status==6}}">
+                      已完成
+                   </view>
+                   <view class="box_liabtiu"  wx:if="{{item.order_status==4}}">
+                         退款完成
+                   </view>
+           </view>
+           <view class="box_lib" wx:for='{{item.meal}}' wx:key='index'>
+                   <view class="box_liba">
+                             <image class="box_libaimg" src="{{item.meal_image}}"></image>
+                             <view class="box_libab">
+                                    <view class="box_libaba">
+                                         {{item.meal_name}}
+                                    </view >
+                                    <view class="box_libabb">
+                                       {{item.meal_introduce}}
+                                    </view>
+                             </view>
+                   </view>
+                   <view class="box_libb">
+                                ￥{{item.meal_price}}
+                   </view>
+           </view>
+           
+           <view class="weetat" wx:if="{{item.addDish.length>0}}" wx:key='index'> 
+            额外餐品
+           </view>
+            <view class="hidmat" wx:for='{{item.addDish}}'>
+                 <view class="hidmat_a">
+                      <image class="hidmat_img" src="../../assets/icons/zuozi.png"></image>
+                        <view class="infor">
+                              <view class="infor_a">
+                                  鱼香肉丝{{item.dish_name}}
+                              </view>
+                                <view class="infor_b">
+                                  大份/微辣{{item.material}}
+                              </view>
+                        </view>
+                  </view>
+                  <view class="hidmat_b">
+                        <view class="inmead">
+                            <text class="inmead_a">X</text>{{item.dish_sum}}
+                        </view>
+                        <view class="in_prier">
+                              ￥{{item.price}}
+                        </view>
+                   </view>
+            </view>
+            <view class="xian"></view>
+            <view class="meade">
+                 <view class="meade_a">
+                     {{item.create_time}}
+                 </view>
+                 <view class="meade_b">
+                          <view class="meade_ba">
+                            共{{item.shop_num}}件商品
+                          </view>
+                          <view class="meade_bb">
+                              <text style="font-weight:500;">实付￥</text>{{item.money}}
+                          </view>
+                 </view>
+            </view>
+           
+              <view class="botttcon" wx:if="{{item.order_status==2}}" catchtap="showPopup" data-order_no="{{item.order_no}}">
+                   <view class="botttcon_a" >
+                      取消预约
+                   </view>
+                   
+              </view>
+                <view class="botttcon" wx:if="{{item.order_status==6}}" catchtap="boxiang">
+                   <view class="botttcon_a" >
+                       再来一单
+                   </view>
+                   
+              </view>
+      </view>
+    </view>
+   <view wx:else>
+           <view class="wujil">
+             <image src="../../assets/icons/wujil.png"></image>
+           </view>
+           <view class="text_list">
+              您还没有包厢记录，快去预订吧！
+           </view>
+   </view>
+   
+   <view wx:if="{{listarr.length>0}}">
+      <view class="box" wx:if="{{currentIndex==2}}" wx:for='{{listarr}}' wx:key='index' data-item="{{item}}" catchtap="boxdetails">
+           <view class="box_lia">
+                   <view class="box_liaa">
+                       预约时间：{{item.start_date}} {{item.start_time}}-{{item.end_time}}
+                   </view>
+                   <view class="box_liab" wx:if="{{item.order_status==2}}">
+                         待赴约
+                   </view>
+                     <view class="box_liabtiu"  wx:if="{{item.order_status==3}}">
+                         退款中...
+                   </view>
+                    <view class="box_liabwan"  wx:if="{{item.order_status==6}}">
+                      已完成
+                   </view>
+                   <view class="box_liabtiu"  wx:if="{{item.order_status==4}}">
+                         退款完成
+                   </view>
+           </view>
+           <view class="box_lib" wx:for='{{item.meal}}' wx:key='index'>
+                   <view class="box_liba">
+                             <image class="box_libaimg" src="{{item.meal_image}}"></image>
+                             <view class="box_libab">
+                                    <view class="box_libaba">
+                                         {{item.meal_name}}
+                                    </view >
+                                    <view class="box_libabb">
+                                       {{item.meal_introduce}}
+                                    </view>
+                             </view>
+                   </view>
+                   <view class="box_libb">
+                                ￥{{item.meal_price}}
+                   </view>
+           </view>
+           
+           <view class="weetat" wx:if="{{item.addDish.length>0}}"> 
+            额外餐品
+           </view>
+            <view class="hidmat" wx:for='{{item.addDish}}' wx:key='index'> 
+                 <view class="hidmat_a">
+                      <image class="hidmat_img" src="../../assets/icons/zuozi.png"></image>
+                        <view class="infor">
+                              <view class="infor_a">
+                                  鱼香肉丝{{item.dish_name}}
+                              </view>
+                                <view class="infor_b">
+                                  大份/微辣{{item.material}}
+                              </view>
+                        </view>
+                  </view>
+                  <view class="hidmat_b">
+                        <view class="inmead">
+                            <text class="inmead_a">X</text>{{item.dish_sum}}
+                        </view>
+                        <view class="in_prier">
+                              ￥{{item.price}}
+                        </view>
+                   </view>
+            </view>
+            <view class="xian"></view>
+            <view class="meade">
+                 <view class="meade_a">
+                     {{item.create_time}}
+                 </view>
+                 <view class="meade_b">
+                          <view class="meade_ba">
+                            共{{item.shop_num}}件商品
+                          </view>
+                          <view class="meade_bb">
+                              <text style="font-weight:500;">实付￥</text>{{item.money}}
+                          </view>
+                 </view>
+            </view>
+           
+              <view class="botttcon" wx:if="{{item.order_status==2}}" catchtap="showPopup" data-order_no="{{item.order_no}}">
+                   <view class="botttcon_a" >
+                      取消预约
+                   </view>
+                   
+              </view>
+                <view class="botttcon" wx:if="{{item.order_status==6}}" catchtap="boxiang">
+                   <view class="botttcon_a" >
+                      再来一单
+                   </view>
+                   
+              </view>
+     </view>
+   </view>
+    <view wx:else>
+           <view class="wujil">
+             <image src="../../assets/icons/wujil.png"></image>
+           </view>
+           <view class="text_list">
+              您还没有包厢记录，快去预订吧！
+           </view>
+   </view>
+</view>
+
+<popup id='popup'  class='tan'
+      title='提示' 
+      content='你确定取消订单吗？' 
+      btn_no='取消' 
+      btn_ok='确定'
+      bind:error="_error"  
+      bind:success="_success">
+  </popup>

@@ -1,0 +1,43 @@
+<!--pages/mealDetail/mealDetail.wxml-->
+<view class="detailbg">
+  <image src="{{mealDetail.meal_image[0]}}"></image>
+</view>
+<view class="head" style="padding-top:{{statusBarHeight}}px;height:45px;line-height:45px">
+  <view class="back" bindtap="goback">
+    <image src="../../images/backWhite.png"></image>
+  </view>
+  <view class="search">
+    订单详情
+  </view>
+</view>
+<view class="detailBox">
+  <view class="detailhead">
+    <view>{{mealDetail.meal_name}}</view>
+    <view>{{mealDetail.meal_introduce}}</view>
+  </view>
+  <view class="detailList">
+    <view class="typeYCX" wx:for='{{mealDetail.cate}}' wx:key='index'>
+      <view class="listtype">{{item.cate_name}}</view>
+      <view class="list" wx:for='{{item.dish}}' wx:key='index'>
+        <view class="detailImg">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view>
+          <view>
+            <view>{{item.name}}</view>
+            <view>{{item.dish_num}}份</view>
+          </view>
+          <view>￥{{item.price}}</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
+</view>
+
+
+
+<view class="footer" bindtap="checkMeal">
+  <text>选择此套餐</text>
+</view>

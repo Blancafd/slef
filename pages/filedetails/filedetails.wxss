@@ -1,0 +1,152 @@
+/* pages/platedetails/platedetails.wxss */
+.header{
+  width: 100%;
+  height: 50rpx;
+  background: #FBAF02;
+}
+.header_a{
+  width:95%;
+height:50rpx;
+border-radius:28rpx;
+margin: -30rpx auto;
+background: #FDD781;
+}
+.box{
+  width: 100%;
+  border-radius:28rpx;
+  margin-top: -30rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.box_a{
+  width: 90%;
+  margin: 60rpx auto 30rpx;
+font-size:15px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
+.xian{
+  width: 90%;
+  height: 2rpx;
+  background: #F8F8F8;
+  margin: 0 auto;
+}
+.bxo_reder{
+  width: 90%;
+  height: 120rpx;
+background:rgba(255,255,255,1);
+box-shadow:2px 2px 8px rgba(0,0,0,0.12);
+border-radius:30rpx;
+margin: 40rpx auto;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+}
+.bxo_redera{
+  width: 65%;
+  display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: center;
+
+}
+.box_img{
+  width: 150rpx;
+  height: 120rpx;
+}
+.bxo_redera_a{
+  display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+margin-left: 15rpx;
+}
+.dera_a{
+  width:290rpx;
+font-size:15px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.dera_b{
+  width:290rpx;
+font-size:10px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(136,136,136,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.bxo_rederb{
+  width: 35%;
+  display: flex;
+  flex-wrap: nowrap; 
+  flex-direction: row;
+  align-items: center;
+}
+.bxo_rederbc{
+font-size:12px;
+font-family:DIN;
+font-weight:500;
+color:rgba(51,51,51,1);
+
+}
+.bxo_rederd{
+font-size:16px;
+font-family:DIN;
+font-weight:bold;
+color:rgba(51,51,51,1);
+padding-left: 20rpx;
+}
+.herad{
+  width: 100%;
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.in_box{
+  width: 90%;
+  margin: 35rpx auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.in_box_a{
+ width:45%;
+font-size:15px;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
+.in_box_b{
+  width:55%;
+font-size:15px;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.bottons{
+  width: 90%;
+  height: 88rpx;
+  position: fixed;
+   bottom:40rpx;
+   right: 40rpx;
+   background: #FBAF02;
+   text-align: center;
+   line-height: 88rpx;
+   border-radius: 46rpx;
+   color: #fff;
+}
